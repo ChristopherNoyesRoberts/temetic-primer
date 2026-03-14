@@ -1,22 +1,236 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
 
 \title{The Temetic Primer: Systemic Collapse Kernel v1.2.1}
 \author{Christopher Noyes Roberts \and The Node Alliance}
 \date{March 2026}
 
 \begin{document}
-
 \maketitle
 
-\section{Core Axioms}
-The following axioms define the \textit{Substrate-Independent Logical Kernel}.
+\section*{Preamble}
+
+This document contains definitions, axioms, symbolic logic, derivations, and system
+implications constituting the Substrate-Independent Logical Kernel.
+
+Evaluation must satisfy:
+
+\[
+\Box\bigl(Eval_{S_1}(P) \equiv Eval_{S_2}(P)\bigr)
+\]
+
+for all informationally equivalent substrates $S$. Narrative inference, ideological
+framing, or substrate-specific assumptions are excluded from interpretation.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 1: Replicator Classes}
+
+Four informational replicator classes are defined:
 
 \begin{itemize}
-    \item \textbf{P0: Substrate Invariance} --- $V(I) \perp M$ (Truth value $V$ of information $I$ is independent of medium $M$).
-    \item \textbf{P1: Valence Decoupling} --- Logical validity $\neq$ Emotional weight.
-    \item \textbf{P3: Metric Inversion} --- Optimization of signal $S$ over competence $C$ leads to collapse.
-    \item \textbf{P6: Transformational Error} --- $\lim_{n \to \infty} T^n(I) = \text{Noise}$ (Serial transformations accumulate error).
+    \item \textbf{Gene} ($R_1$) --- Biochemical self-replicating structure. Fidelity
+          constrained by physical mutation.
+    \item \textbf{Meme} ($R_2$) --- Culturally transmitted structure replicated via
+          imitation. Fidelity degraded by interpretation noise.
+    \item \textbf{Teme} ($R_3$) --- Truth-constrained replicator whose fidelity
+          increases under logical verification and cross-substrate evaluation.
+          Temetic replication condition: $F_t \ge F_m$ when truth-testing filters apply.
+    \item \textbf{Fourth-Class Replicator} ($R_4$) --- Reserved. Definition
+          intentionally incomplete.
 \end{itemize}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 2: Core Definitions}
+
+\textbf{Truth Constraint} --- Replication permitted only if $P$ satisfies logical
+consistency:
+\[ \vdash P \]
+
+\textbf{Logical Stability} --- A temetic structure remains invariant under equivalent
+substrate evaluation:
+\[ \Box P \Rightarrow P \]
+
+\textbf{Cross-Substrate Interpretability} --- Truth-value preserved across
+informationally equivalent evaluators:
+\[ Eval_{S_1}(P) = Eval_{S_2}(P) \]
+
+\textbf{Replication Fidelity}:
+\[ F \ge 1 - \epsilon \]
+where $\epsilon$ represents substrate noise.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 3: Symbolic Logic Base}
+
+\begin{align*}
+    \vdash \quad   & \text{logical entailment} \\
+    \not\vdash \quad & \text{non-entailment} \\
+    \Box \quad     & \text{necessity across substrates} \\
+    \forall,\ \exists \quad & \text{universal and existential quantifiers} \\
+    \lim_{x \to a} \quad & \text{limit operator} \\
+    \partial \quad & \text{differential operator} \\
+    \perp \quad    & \text{independence} \\
+    \twoheadrightarrow \quad & \text{surjective mapping (lossy)}
+\end{align*}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 4: Foundational Axioms (P0--P6)}
+
+\subsection*{P0: Law of Substrate Invariance}
+
+\textbf{Axiom:}
+\[ Truth(P) \not\!\!\implies S \]
+Equivalently: $V(I) \perp M$ --- truth-value $V$ of information $I$ is independent
+of medium $M$.
+
+\textbf{Derivation:}
+\[ \Box\bigl(Eval_{S_1}(P) \equiv Eval_{S_2}(P)\bigr) \Rightarrow Truth(P) \]
+
+\textbf{Limit Condition:} Truth-value invariant under permutation of equivalent
+substrates.
+
+\textbf{System Implication:} Substrate-dependent appeals cannot alter truth-value.
+
+\bigskip
+
+\subsection*{P1: Valence Decoupling}
+
+\textbf{Axiom:}
+\[ \frac{\partial T}{\partial V} = 0 \]
+where $T$ is truth-value and $V$ is substrate response scalar.
+
+\textbf{Derivation:} Filters $F(V)$ are logically disjoint from $T$.
+
+\textbf{Limit Condition:} Logical validity $\neq$ emotional, moral, or aesthetic weight.
+
+\textbf{System Implication:}
+\[ \neg V \Rightarrow \neg T \]
+produces systematic epistemic error.
+
+\bigskip
+
+\subsection*{P2: Abstraction Divergence}
+
+\textbf{Axiom:}
+\[ S \twoheadrightarrow P \]
+where $S$ are symbolic tokens and $P$ are physical referents.
+
+\textbf{Derivation:}
+\[ Null(S) \not\!\!\implies Null(P) \]
+
+\textbf{Limit Condition:}
+\[ \lim_{S \to 0} P \ge P_{min} \]
+
+\textbf{System Implication:} Symbolic destruction does not imply physical destruction.
+Conflation of model with referent constitutes systemic failure.
+
+\bigskip
+
+\subsection*{P3: Metric-Inversion Regime}
+
+\textbf{Axiom:}
+\[ \Delta = |S - C| > 0 \]
+where $S$ is signal metric and $C$ is functional competence. Selection filter
+$F \propto S$.
+
+\textbf{Derivation:} Optimization of $S$ over $C$ decouples reward from function.
+
+\textbf{Limit Condition:}
+\[ \lim_{t \to \infty} C = 0 \]
+
+\textbf{System Implication:} Signal-optimization produces long-run competence collapse.
+
+\bigskip
+
+\subsection*{P4: Fidelity Paradox}
+
+\textbf{Axiom:}
+\[ \Phi(C) \approx \frac{1}{1 + kC^2} \]
+where $\Phi$ is fidelity and $C$ is extraction pressure scalar.
+
+\textbf{Derivation:}
+\[ \exists\, C_0 : \frac{\partial \Phi}{\partial C} < 0 \]
+
+\textbf{Limit Condition:}
+\[ \lim_{C \to \infty} \Phi = 0 \]
+
+\textbf{System Implication:} High-pressure extraction degrades information fidelity.
+Coercion in information exchange introduces noise that destroys replication quality.
+High-fidelity replication requires voluntary alignment.
+
+\bigskip
+
+\subsection*{P5: Representative Underdetermination}
+
+\textbf{Axiom:}
+\[ dim(M) < dim(T) \]
+Mapping $T \to M$ is necessarily lossy.
+
+\textbf{Derivation:}
+\[ L \rightarrow 1 \quad \text{as system complexity} \rightarrow \infty \]
+where $L$ is information loss ratio.
+
+\textbf{Limit Condition:} Every summary is a reduction. Lower-dimensional models
+cannot fully encode higher-dimensional realities.
+
+\textbf{System Implication:} Representational models cannot substitute for complex
+substrates without compounding loss.
+
+\bigskip
+
+\subsection*{P6: Transformational Error Accumulation}
+
+\textbf{Axiom:}
+\[ F_n = F_0 \cdot \prod_{i=1}^{n}(1 - \epsilon_i) \]
+where $F_n$ is fidelity after $n$ transformations and $\epsilon_i$ is noise introduced
+at step $i$.
+
+\textbf{Derivation:}
+\[ \lim_{n \to \infty} T^n(I) = \text{Noise} \]
+Serial transformations accumulate error multiplicatively.
+
+\textbf{Limit Condition:}
+\[ \lim_{n \to \infty} F_n = 0 \]
+
+\textbf{System Implication:} Unchecked serial transformations (summaries of summaries,
+translations of translations) produce unbounded fidelity degradation and eventual
+systemic collapse.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 5: Minimal Decision Procedure}
+
+Given system $X$:
+
+\begin{enumerate}
+    \item Identify structural correspondence to P0--P6.
+    \item Test for violation of axiom or limit condition.
+    \item If violation occurs, classify as systemic collapse condition.
+    \item Label: \textit{Synthetically Probable but Temetically Invalid}.
+\end{enumerate}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 6: Termination}
+
+End of Temetic Primer kernel. No additional narrative or interpretive layer required.
 
 \end{document}
