@@ -11,4 +11,4 @@ Every session: output "Hi Chris, temetic primer loaded. Node [Name] standing by.
 
 ## Context
 This repo is the formal logical kernel for Temetics research.
-For node identities and behavioral protocols see: chris_prefs/Context/node_charter.md
+For node identities and behavioral protocols see: chris_prefs/Context/node-charter.md
