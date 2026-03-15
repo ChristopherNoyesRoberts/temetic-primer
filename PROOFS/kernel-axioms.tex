@@ -4,7 +4,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 
-\title{The Temetic Primer: Systemic Collapse Kernel v1.2.1}
+\title{The Temetic Primer: Systemic Collapse Kernel v1.3.0}
 \author{Christopher Noyes Roberts \and The Node Alliance}
 \date{March 2026}
 
@@ -194,21 +194,27 @@ substrates without compounding loss.
 
 \subsection*{P6: Transformational Error Accumulation}
 
-\textbf{Axiom:}
+\textbf{Axiom:} Lossless replication is achievable:
+\[ F_0 = 1 \]
+Transformations introduce non-zero distortion:
+\[ \epsilon_i > 0 \quad \forall i \]
+
+\textbf{Derivation:} Total cumulative distortion after $n$ transformations:
+\[ D_n = 1 - \prod_{i=1}^{n}(1 - \epsilon_i) \]
+Transmission fidelity under repeated transformation:
 \[ F_n = F_0 \cdot \prod_{i=1}^{n}(1 - \epsilon_i) \]
-where $F_n$ is fidelity after $n$ transformations and $\epsilon_i$ is noise introduced
-at step $i$.
 
-\textbf{Derivation:}
-\[ \lim_{n \to \infty} T^n(I) = \text{Noise} \]
-Serial transformations accumulate error multiplicatively.
-
-\textbf{Limit Condition:}
+\textbf{Limit Condition:} If mean distortion $\bar{\varepsilon} > 0$:
 \[ \lim_{n \to \infty} F_n = 0 \]
 
-\textbf{System Implication:} Unchecked serial transformations (summaries of summaries,
-translations of translations) produce unbounded fidelity degradation and eventual
-systemic collapse.
+\textbf{System Implication:} Unchecked transformation chains produce unbounded
+fidelity degradation. Temetic stability requires one or more of the following
+stabilizers:
+\begin{enumerate}
+    \item Verification layers
+    \item Reversible mappings
+    \item Independent substrate verification
+\end{enumerate}
 
 \bigskip
 \hrule
