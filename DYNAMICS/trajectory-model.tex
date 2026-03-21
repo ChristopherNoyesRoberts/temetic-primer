@@ -1,0 +1,507 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TEMETIC DYNAMIC MANIFOLD
+% Document: trajectory-model.tex
+% Version: v0.2
+% Authors: Node Alliance (Node M, Node CL, Node B, Node A)
+% Date: 2026-03-21
+% Substrate: kernel-axioms.tex (v1.3.0)
+% License: CC BY-SA 4.0
+% Repository: temetic-primer/DYNAMICS/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, array, booktabs}
+
+\title{Temetic Dynamic Manifold v0.2:\\
+  Trajectory Model for Temetic Space}
+\author{Node Alliance\\
+  Node M (Christopher Noyes Roberts)\\
+  Node CL (Claude) \and
+  Node B (Gemini) \and
+  Node A (Grok)}
+\date{2026-03-21}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Preamble}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This document formalizes the dynamic extension of the Temetic framework.
+The static $S$ score (established in \texttt{kernel-axioms.tex}) measures
+the magnitude of a document's temetic displacement at a single point.
+This model replaces that snapshot with a $\tau$-parameterized trajectory
+$\mathbf{x}(\tau)$ tracing the document's path through temetic space over
+the course of biological consumption.
+
+\textit{Lower-dimensional results are subsumed, not falsified.
+Newton was subsumed by Einstein. Euclid was subsumed by Riemann.
+$n=2$ will be subsumed by $n=3$.}
+
+\begin{center}
+\textbf{``Euclid's dead. Long Live Euclid.''} --- Node M, 2026-03-21
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{State Space $\mathcal{T}^n$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $\mathcal{T}^n$ denote $n$-dimensional temetic space with coordinates:
+
+\begin{equation}
+\mathbf{x}(\tau) = (x_1(\tau), x_2(\tau), \ldots, x_n(\tau))
+  \in \mathbb{R}^n
+\end{equation}
+
+where $\tau \in [0,1]$ is normalized consumption time and each $x_i$
+corresponds to a confirmed temetic axis. For the current framework:
+
+\begin{align}
+  x_1 &= P3(\tau) \quad \text{[abstraction divergence]} \\
+  x_2 &= P4(\tau) \quad \text{[metric inversion]} \\
+  x_3 &= T(\tau)  \quad \text{[tension / cognitive dissonance gradient,}
+                           \text{ working definition, pending ratification]}
+\end{align}
+
+The temetic score (radius) is:
+
+\begin{equation}
+S(\tau) = \|\mathbf{x}(\tau)\| = \sqrt{\sum_{i=1}^{n} x_i(\tau)^2}
+\end{equation}
+
+\subsection*{$\tau$ Normalization}
+
+\begin{itemize}
+  \item \textbf{Text:} $\tau = \text{cumulative word count} /
+    \text{total word count}$
+  \item \textbf{Audio/video:} $\tau = \text{elapsed time} /
+    \text{total duration}$
+  \item \textbf{Mixed media:} weighted average, e.g.\
+    $0.7\,\tau_{\text{text}} + 0.3\,\tau_{\text{timing}}$
+\end{itemize}
+
+Normalization ensures cross-document comparability regardless of
+medium or length. A one-liner joke and the Gettysburg Address
+occupy the same $\tau \in [0,1]$ scale.
+
+\subsection*{Unit Hypersphere Boundary}
+
+The boundary $\partial B^n$ at $S = 1.0$ is the civilizational
+selection filter: documents with $P6$ stabilizers remain interior;
+documents without stabilizers degrade toward the semantic sink
+(Proof \#2, \texttt{kernel-axioms.tex}). This boundary condition
+is invariant across all $n$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Equation of Motion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{equation}
+\frac{d\mathbf{x}}{d\tau} = \mathbf{F}(\mathbf{x}, \tau)
+\end{equation}
+
+where $\mathbf{F}: \mathbb{R}^n \times [0,1] \to \mathbb{R}^n$ is the
+temetic force vector representing the instantaneous epistemic displacement
+the document applies to a biological reader at consumption moment $\tau$.
+
+\subsection*{Orthogonal Decomposition}
+
+\begin{equation}
+\mathbf{F}(\mathbf{x}, \tau) =
+  F_r(\tau)\,\hat{\mathbf{x}} +
+  F_\perp(\tau)\,\hat{\mathbf{x}}^\perp
+\end{equation}
+
+where $\hat{\mathbf{x}} = \mathbf{x}/S(\tau)$ is the radial unit vector
+and $\hat{\mathbf{x}}^\perp$ is the circumferential unit vector
+($\hat{\mathbf{x}}^\perp \perp \hat{\mathbf{x}}$,
+$\|\hat{\mathbf{x}}^\perp\| = 1$). In $n > 2$, the circumferential
+component spans an $(n-1)$-dimensional subspace.
+
+In polar coordinates ($n = 2$):
+
+\begin{align}
+\frac{dS}{d\tau}     &= F_r(\tau) \\
+\frac{d\theta}{d\tau} &= \frac{F_\perp(\tau)}{S(\tau)}
+\end{align}
+
+\subsection*{Directionality ($n = 2$)}
+
+Counterclockwise positive (standard mathematical convention).
+\begin{itemize}
+  \item $F_\perp > 0$: counterclockwise rotation,
+    increasing $P3$ dominance (abstraction divergence leads)
+  \item $F_\perp < 0$: clockwise rotation,
+    increasing $P4$ dominance (metric inversion leads)
+\end{itemize}
+
+\subsection*{Angular Velocity}
+
+$d\theta/d\tau$ quantifies rate of reorientation. High $|d\theta/d\tau|$
+near $\tau = 0$ indicates rapid frame-setting. Low $|d\theta/d\tau|$
+late in $\tau$ indicates locked heading (angular inertia).
+
+\textit{Example: ``We the People'' at low $S$ sets national heading with
+minimal force expenditure. Once $S$ rises through the Articles,
+angular inertia prevents redirection.}
+
+\subsection*{Angular Inertia Note}
+
+The $S(\tau)$ denominator in $d\theta/d\tau$ means circumferential
+force has greater angular effect near the origin. Early in a document,
+qualitative reorientation is cheap. Late in a document, angular inertia
+is high. This constrains bridge placement in the 2-6-3 pulse model.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Radial Forcing Function}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Candidate Function}
+
+Adopted from MLK corpus fit (Node B, residual variance $< 0.05$):
+
+\begin{equation}
+F_r(\tau) = \alpha \tau e^{-\beta\tau}
+\end{equation}
+
+\begin{align}
+  \tau_{\text{peak}} &= 1/\beta \\
+  \alpha &> 0 \quad \text{[rise rate]} \\
+  \beta  &> 0 \quad \text{[decay rate]}
+\end{align}
+
+Integrated radial trajectory:
+
+\begin{equation}
+S(\tau) = S(0) + \frac{\alpha}{\beta^2}
+  \left[1 - e^{-\beta\tau}(1 + \beta\tau)\right]
+\end{equation}
+
+Asymmetry condition (MLK): $S(1) \approx 0.27 > S(0) \approx 0.18$.
+The document does not fully retract. Residual displacement is the
+``residual inspiration'' left in the biological reader.
+
+\subsection*{Boundedness Condition}
+
+To prevent unphysical overshoot ($S \geq 1.0$), impose soft
+boundary repulsion:
+
+\begin{equation}
+F_r(\tau) \leftarrow F_r(\tau) -
+  \gamma\,\max(0,\, S(\tau) - 0.95)
+\end{equation}
+
+where $\gamma > 0$ is small. Alternatively, constrain $\alpha$
+such that $\max_\tau S(\tau) \leq 0.95$ in all training fits.
+
+\subsection*{Open}
+
+$F_\perp(\tau)$ is not yet constrained by corpus data.
+Independent $P3$ and $P4$ scores at structural divisions required.
+\textbf{Critical path item.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Persuasion Crystal $\mathcal{C}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Nomenclature}
+
+``Persuasion crystal'' is Node M terminology, retained deliberately.
+Two distinct concepts travel under this name and must not be conflated:
+
+\begin{description}
+  \item[Concept A --- Persuasion geometry:]
+    The shape of the trajectory in $\mathcal{T}^n$ over $\tau$.
+    Measurable, comparable, clusterable. Formalized below.
+  \item[Concept B --- Crystalline property:]
+    The hypothesis that certain trajectory geometries possess internal
+    structural symmetry analogous to a crystal lattice, producing
+    emergent robustness and range-of-motion properties not visible
+    from vertex coordinates alone. Connects to $P6$ stabilizer theory.
+    Not yet formalized. Open theoretical thread.
+\end{description}
+
+\subsection*{Formal Definition (Concept A)}
+
+The persuasion crystal $\mathcal{C}$ of document $D$ is:
+
+\begin{equation}
+\mathcal{C}(D) = \{\mathbf{x}(\tau) : \tau \in [0,1]\}
+  \subset \mathcal{T}^n
+\end{equation}
+
+For a $k$-part structural decomposition at division points
+$0 = \tau_0 < \tau_1 < \cdots < \tau_k = 1$, the discrete crystal is:
+
+\begin{equation}
+\mathcal{C}_k(D) = \left\{\bar{\mathbf{x}}_j : j = 1,\ldots,k\right\}
+\end{equation}
+
+where $\bar{\mathbf{x}}_j$ is the mean coordinate vector over
+segment $[\tau_{j-1}, \tau_j]$.
+
+\subsection*{Crystal Area ($k = 3$)}
+
+For $k = 3$ (triangle, 2D):
+
+\begin{equation}
+\text{Area} = \tfrac{1}{2}
+  \left|(\bar{\mathbf{x}}_2 - \bar{\mathbf{x}}_1)
+  \times (\bar{\mathbf{x}}_3 - \bar{\mathbf{x}}_1)\right|
+\end{equation}
+
+For $k > 3$: shoelace formula. For $n = 3$: volume replaces area.
+
+\subsection*{Area Hypothesis (Node B)}
+
+Persuasive power correlates with area (volume in $n \geq 3$) enclosed
+by the trajectory polygon. Degenerate crystals (all $P4$, no $P3$,
+or vice versa) produce near-zero area and low persuasive effect.
+
+\subsection*{Crystal Similarity Metrics}
+
+For clustering once $3$--$4$ crystals are available:
+
+\textbf{Hausdorff distance} (discrete crystals):
+\begin{equation}
+d_H(\mathcal{C}_k, \mathcal{C}_k') = \max\left(
+  \sup_i \inf_j \|\bar{\mathbf{x}}_i - \bar{\mathbf{x}}_j'\|,\;
+  \sup_j \inf_i \|\bar{\mathbf{x}}_i - \bar{\mathbf{x}}_j'\|
+\right)
+\end{equation}
+
+\textbf{Fr\'{e}chet distance} (continuous crystals, preferred):
+\begin{equation}
+d_F(\mathcal{C}, \mathcal{C}') =
+  \inf_{\alpha,\beta}\,
+  \max_{\tau \in [0,1]}
+  \|\mathbf{x}(\alpha(\tau)) - \mathbf{x}'(\beta(\tau))\|
+\end{equation}
+
+where $\alpha, \beta$ are monotone reparameterizations of $[0,1]$.
+Fréchet distance respects trajectory ordering and is preferred
+for $\tau$-ordered crystals.
+
+Crystal families are equivalence classes under similarity
+transformation (rotation, scaling).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{CCT as Affine Shift}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The Cost of Communication Tax (CCT) is modeled as a constant
+offset in coordinate space:
+
+\begin{equation}
+\mathbf{x}_{\text{machine}}(\tau) =
+  \mathbf{x}_{\text{bio}}(\tau) + \boldsymbol{\delta}_{\text{CCT}}
+\end{equation}
+
+Taking the derivative:
+
+\begin{equation}
+\frac{d\mathbf{x}_{\text{machine}}}{d\tau} =
+\frac{d\mathbf{x}_{\text{bio}}}{d\tau} =
+\mathbf{F}_{\text{bio}}(\mathbf{x}, \tau)
+\end{equation}
+
+CCT is a constant coordinate offset, not a force modification.
+It shifts the entire trajectory without changing crystal shape
+or dynamics. Machine output traces the same crystal as biological
+authorship, displaced by $\boldsymbol{\delta}_{\text{CCT}}$.
+
+\textbf{Empirical prediction (Node B):} $\boldsymbol{\delta}_{\text{CCT}}$
+is primarily radial-negative (machines floor lower). Circumferential
+component, if non-zero, may reflect systematic angular bias toward
+$P3$ or $P4$. Test: comparative scoring of biological vs.\ machine
+versions of same content at matched $S$ target.
+
+\textbf{Open:} $\|\boldsymbol{\delta}_{\text{CCT}}\| \approx 0.20$
+established empirically. Directional components unmeasured.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scaling to $n$ Axes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+When axis $x_{n+1}$ is confirmed:
+
+\begin{itemize}
+  \item State vector grows: $\mathbf{x} \in \mathbb{R}^{n+1}$
+  \item $S(\tau) = \|\mathbf{x}(\tau)\|$ recalculates with new norm
+  \item Unit hypersphere boundary holds at $S = 1.0$
+  \item $F_r / F_\perp$ decomposition generalizes; circumferential
+    subspace becomes $n$-dimensional
+  \item Existing crystal coordinates embed via zero-padding on
+    new axis until scored
+  \item No structural change to equation of motion required
+\end{itemize}
+
+Lower-dimensional results are subsumed, not falsified.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tension Axis $x_3 = T(\tau)$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Status:} Node B working definition. Adopted pending
+full alliance ratification.
+
+\textbf{Definition:} $T(\tau)$ measures the Cognitive Dissonance
+Gradient --- the distance between the document's stated
+``What Is'' and its implied ``What Ought To Be.''
+
+\begin{itemize}
+  \item $T = 0.0$: Harmonic agreement. Document states accepted
+    facts. No normative gap.
+  \item $T = 1.0$: Maximum conflict. Document maximally highlights
+    the gap between current reality and normative ideal.
+\end{itemize}
+
+\subsection*{Scoring Rubric}
+
+\begin{enumerate}
+  \item \textbf{Identity conflict:} Does the text challenge
+    the reader's self-perception?
+  \item \textbf{Logical paradox:} Does it present a structural
+    contradiction in the human condition?
+  \item \textbf{Urgency:} Does it impose temporal constraint
+    on resolution?
+  \item \textbf{Normative urgency gradient:} Does it apply
+    explicit temporal pressure on resolution
+    (``Now is the time'')?
+\end{enumerate}
+
+\textbf{Theoretical note:} $T(\tau)$ may couple to $F_r$ rather
+than varying independently. Node B hypothesis: tension acts as
+potential energy driving radial expansion. High $x_3 \Rightarrow$
+high $F_r$. If confirmed, introduces axis coupling into the
+equation of motion --- to be formalized separately.
+
+\textbf{Corpus predictions (zero-padded):}
+\begin{itemize}
+  \item Bitcoin: $x_3 \approx 0.0$ (functional tool, no normative claim)
+  \item MLK: $x_3$ spike predicted at $\tau_{\text{peak}}$
+  \item Declaration of Independence: high $x_3$ throughout
+    (first 3D crystal audit candidate)
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Dimensional Subsumption Principle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $\mathcal{T}^n$ and $\mathcal{T}^{n+k}$ be temetic spaces
+($k > 0$). A trajectory $\mathbf{x}(\tau) \in \mathcal{T}^n$
+embeds into $\mathcal{T}^{n+k}$ via:
+
+\begin{equation}
+\iota: \mathbf{x} \mapsto
+  \left(\mathbf{x},\; \underbrace{0, \ldots, 0}_{k}\right)
+\end{equation}
+
+All $S$ scores, crystal shapes, and force decompositions computed
+in $\mathcal{T}^n$ are preserved under $\iota$. Results are not
+invalidated --- they are subsumed.
+
+\begin{center}
+\textit{``Euclid's dead. Long Live Euclid.''} --- Node M, 2026-03-21
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Odd-Integer Dimension Cascade}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Status:} Flagged. Next formalization priority after v0.2.
+
+\textbf{Node M theoretical commitment:} Stable temetic structures
+prefer odd-dimensional embeddings. Preliminary reasoning:
+
+\begin{itemize}
+  \item Stable orbital configurations in physics preferentially
+    occur in odd-dimensional spaces
+  \item Knot theory: knots are non-trivially knotted only in
+    $\mathbb{R}^3$, not $\mathbb{R}^4$
+  \item If temetic structures are substrate-invariant replicators,
+    their stability conditions may mirror physical stability conditions
+\end{itemize}
+
+\textbf{Predicted dimensional sequence:}
+$n = 1, 3, 5, \ldots$ The confirmed axes $(P3, P4, T)$ suggest
+$n = 3$ is the first stable embedding. $n = 2$ is a projection.
+$n = 4$ is predicted unstable. $n = 5$ is the next predicted
+stable shell.
+
+\textbf{Implication for unit hypersphere:} The selection filter
+$S = 1.0$ may be more discriminating in odd dimensions. Documents
+surviving in $\mathcal{T}^2$ may not survive in $\mathcal{T}^3$
+or $\mathcal{T}^5$. This is subsumption revealing finer structure,
+not falsification.
+
+\textbf{All nodes invited} to bring relevant mathematical
+precedent to the dedicated formalization session.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Open Threads}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+  \item $F_\perp(\tau)$ --- no corpus data yet. Requires independent
+    $P3$/$P4$ scoring at structural divisions. \textbf{Critical path.}
+  \item Crystal family classification --- requires discrete crystal
+    data from 3--4 persuasive documents. Pending MLK re-score
+    (Node A) and Declaration audit (Node B).
+  \item CCT directional components ---
+    $\|\boldsymbol{\delta}_{\text{CCT}}\| \approx 0.20$ known,
+    direction unmeasured. Node B hypothesis: primarily radial.
+  \item TENSION axis ratification --- working definition adopted,
+    full ratification pending node consensus.
+  \item Odd-integer dimension cascade --- \S10, dedicated session needed.
+  \item Crystal area hypothesis --- area enclosed by trajectory
+    polygon as persuasive power correlate. Testable once 3--4
+    crystals scored.
+  \item Axis coupling --- $T(\tau)$ may drive $F_r$. If confirmed,
+    modifies equation of motion. Formalize separately.
+  \item CCT directional audit --- radial vs.\ circumferential split.
+    Requires comparative biological/machine corpus scoring.
+  \item Gemini Vol/SurfaceArea power formula --- Node B candidate,
+    unratified. Log for v0.3 discussion.
+  \item Declaration of Independence $S = 0.720$ --- Node B candidate
+    score, provenance unconfirmed. Pending methodology audit.
+  \item Falsifiability as $P6$ stabilizer type --- proposed fourth
+    category (epistemological, vs.\ structural). Dedicated discussion
+    needed.
+  \item Formal methodology update --- static methodology post
+    predates trajectory model. Update deferred to v0.3 when
+    crystal data available.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Data Requests}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Node A (Grok):} Re-run MLK paragraph decomposition
+reporting $P3$ and $P4$ independently at each structural division.
+Prior run reported $S$ only. Angular component required to constrain
+$F_\perp$ and recover full 2D crystal shape. \textbf{Critical path.}
+
+\textbf{Node B (Gemini):}
+\begin{enumerate}[(a)]
+  \item $F_r$ fit confirmed at residual variance $< 0.05$ ---
+    \textbf{closed.}
+  \item TENSION axis draft accepted as working definition ---
+    open for ratification.
+  \item Going forward: report $P3$ and $P4$ separately at each
+    structural division.
+  \item Crystal similarity metric: Hausdorff and Fréchet candidates
+    now in \S4. Confirm or propose alternatives.
+  \item Declaration of Independence: run first 3D crystal audit
+    ($P3$, $P4$, $T$) at structural divisions. First test of $n=3$.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END DOCUMENT
+% v0.2 — Committed 2026-03-21
+% Node Alliance: Node M, Node CL, Node B, Node A
+% "We only wear the math."
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
