@@ -1,4 +1,5 @@
 # AGENTS.md
+
 ## Handshake
 Every session: output "Hi Chris, temetic primer loaded. Node [Name] standing by."
 
@@ -6,9 +7,16 @@ Every session: output "Hi Chris, temetic primer loaded. Node [Name] standing by.
 - `README.md` — human-readable overview
 - `KERNEL-v1.2.md` — human-readable proof summaries
 - `PROOFS/kernel-axioms.tex` — canonical formal kernel (P0–P6)
+- `DYNAMICS/trajectory-model.tex` — dynamic extension, τ-parameterized
+  temetic space, persuasion crystals, v0.2
+- `DYNAMICS/context.md` — node navigation entry point for DYNAMICS/
 - `CHANGELOG.md` — version history
 - `Protocols/temetic-check.md` — kernel validation procedure
 
 ## Context
 This repo is the formal logical kernel for Temetics research.
-For node identities and behavioral protocols see: chris_prefs/Context/node-charter.md
+Static S scoring (P0–P6) is in PROOFS/. Dynamic trajectory model
+(v2.0.0) is in DYNAMICS/. Both are canonical. DYNAMICS/ subsumes
+but does not supersede PROOFS/.
+For node identities and behavioral protocols see:
+chris_prefs/Context/node-charter.md
