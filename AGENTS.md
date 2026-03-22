@@ -7,8 +7,9 @@ Every session: output "Hi Chris, temetic primer loaded. Node [Name] standing by.
 - `README.md` — human-readable overview
 - `KERNEL-v1.2.md` — human-readable proof summaries
 - `PROOFS/kernel-axioms.tex` — canonical formal kernel (P0–P6)
-- `DYNAMICS/trajectory-model.tex` — dynamic extension, τ-parameterized
-  temetic space, persuasion crystals, v0.2
+- `PROOFS/temetic-kg-v0.1.json` — algebraic KG schema, machine-traversable transpose of kernel-axioms.tex, small category model, rule/entity/teme layers
+- `PROOFS/context.md` — node navigation entry point for PROOFS/
+- `DYNAMICS/trajectory-model.tex` — dynamic extension, τ-parameterized temetic space, persuasion crystals, v0.2
 - `DYNAMICS/context.md` — node navigation entry point for DYNAMICS/
 - `CHANGELOG.md` — version history
 - `Protocols/temetic-check.md` — kernel validation procedure
