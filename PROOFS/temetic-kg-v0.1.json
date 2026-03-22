@@ -1,0 +1,320 @@
+{
+  "$schema": "temetic-kg/v0.1",
+
+  "model": {
+    "structure": "small_category",
+    "objects": "expressions",
+    "morphisms": "rules",
+    "composition": "rule_chaining",
+    "identity": "P0"
+  },
+
+  "operator_signatures": {
+    "eq":           {"arity": 2, "types": ["any", "any"]},
+    "neq":          {"arity": 2, "types": ["any", "any"]},
+    "lt":           {"arity": 2, "types": ["scalar", "scalar"]},
+    "gt":           {"arity": 2, "types": ["scalar", "scalar"]},
+    "leq":          {"arity": 2, "types": ["scalar", "scalar"]},
+    "geq":          {"arity": 2, "types": ["scalar", "scalar"]},
+    "add":          {"arity": 2, "types": ["scalar", "scalar"]},
+    "sub":          {"arity": 2, "types": ["scalar", "scalar"]},
+    "mul":          {"arity": 2, "types": ["scalar", "scalar"]},
+    "div":          {"arity": 2, "types": ["scalar", "scalar"]},
+    "pow":          {"arity": 2, "types": ["scalar", "scalar"]},
+    "partial_deriv":{"arity": 2, "types": ["function", "variable"]},
+    "limit":        {"arity": 3, "types": ["expression", "variable", "value"]},
+    "product":      {"arity": 4, "types": ["variable", "scalar", "value", "expression"]},
+    "sum":          {"arity": 4, "types": ["variable", "scalar", "value", "expression"]},
+    "independence": {"arity": 2, "types": ["expression", "substrate"]},
+    "surjects":     {"arity": 2, "types": ["set", "set"]},
+    "dim":          {"arity": 1, "types": ["any"]},
+    "apply":        {"arity": 2, "types": ["function", "any"]},
+    "not":          {"arity": 1, "types": ["expression"]},
+    "implies":      {"arity": 2, "types": ["expression", "expression"]},
+    "iff":          {"arity": 2, "types": ["expression", "expression"]},
+    "box":          {"arity": 1, "types": ["expression"]},
+    "forall":       {"arity": 2, "types": ["variable", "expression"]},
+    "exists":       {"arity": 2, "types": ["variable", "expression"]}
+  },
+
+  "types": [
+    "scalar", "set", "function", "variable",
+    "substrate", "abstract", "replicator",
+    "constraint", "expression", "value", "any"
+  ],
+
+  "rules": {
+    "P0": {
+      "type": "invariance",
+      "inputs": ["I", "M"],
+      "outputs": ["constraint"],
+      "pattern": {
+        "op": "apply",
+        "fn": "V",
+        "arg": "I"
+      },
+      "rewrite": {
+        "op": "independence",
+        "lhs": {
+          "op": "apply",
+          "fn": "V",
+          "arg": "I"
+        },
+        "rhs": "M"
+      },
+      "closure": true,
+      "composable_with": "all",
+      "parent": null,
+      "inherited_by": "all"
+    },
+    "P1": {
+      "type": "decoupling",
+      "inputs": ["T", "V"],
+      "outputs": ["constraint"],
+      "pattern": {
+        "op": "partial_deriv",
+        "num": "T",
+        "den": "V"
+      },
+      "rewrite": {
+        "op": "eq",
+        "lhs": {
+          "op": "partial_deriv",
+          "num": "T",
+          "den": "V"
+        },
+        "rhs": 0
+      },
+      "closure": true,
+      "composable_with": ["P0", "P5"],
+      "parent": "P0"
+    },
+    "P2": {
+      "type": "surjection",
+      "inputs": ["S", "P"],
+      "outputs": ["constraint"],
+      "pattern": {
+        "op": "surjects",
+        "from": "S",
+        "to": "P"
+      },
+      "rewrite": {
+        "op": "surjects",
+        "from": "S",
+        "to": "P",
+        "lossy": true
+      },
+      "closure": true,
+      "composable_with": ["P0", "P5", "P6"],
+      "parent": "P0"
+    },
+    "P3": {
+      "type": "inversion",
+      "inputs": ["Sig", "C"],
+      "outputs": ["constraint"],
+      "pattern": {
+        "op": "gt",
+        "lhs": {
+          "op": "sub",
+          "lhs": "Sig",
+          "rhs": "C"
+        },
+        "rhs": 0
+      },
+      "rewrite": {
+        "op": "limit",
+        "var": "t",
+        "to": "inf",
+        "result": {
+          "op": "eq",
+          "lhs": "C",
+          "rhs": 0
+        }
+      },
+      "closure": true,
+      "composable_with": ["P0", "P1"],
+      "parent": "P0"
+    },
+    "P4": {
+      "type": "paradox",
+      "inputs": ["Phi", "C"],
+      "outputs": ["constraint"],
+      "pattern": {
+        "op": "apply",
+        "fn": "Phi",
+        "arg": "C"
+      },
+      "rewrite": {
+        "op": "limit",
+        "var": "C",
+        "to": "inf",
+        "result": {
+          "op": "eq",
+          "lhs": {
+            "op": "apply",
+            "fn": "Phi",
+            "arg": "C"
+          },
+          "rhs": 0
+        }
+      },
+      "closure": true,
+      "composable_with": ["P0", "P3"],
+      "parent": "P0"
+    },
+    "P5": {
+      "type": "underdetermination",
+      "inputs": ["M", "T_topic"],
+      "outputs": ["constraint"],
+      "pattern": {
+        "op": "dim",
+        "arg": "M"
+      },
+      "rewrite": {
+        "op": "lt",
+        "lhs": {
+          "op": "dim",
+          "arg": "M"
+        },
+        "rhs": {
+          "op": "dim",
+          "arg": "T_topic"
+        }
+      },
+      "closure": true,
+      "composable_with": ["P0", "P2", "P6"],
+      "parent": "P0"
+    },
+    "P6": {
+      "type": "accumulation",
+      "inputs": ["F_0", "eps_i", "n"],
+      "outputs": ["F_n", "D_n"],
+      "pattern": {
+        "op": "product",
+        "index": "i",
+        "from": 1,
+        "to": "n",
+        "term": {
+          "op": "sub",
+          "lhs": 1,
+          "rhs": "eps_i"
+        }
+      },
+      "rewrite": {
+        "op": "eq",
+        "lhs": "F_n",
+        "rhs": {
+          "op": "mul",
+          "lhs": "F_0",
+          "rhs": {
+            "op": "product",
+            "index": "i",
+            "from": 1,
+            "to": "n",
+            "term": {
+              "op": "sub",
+              "lhs": 1,
+              "rhs": "eps_i"
+            }
+          }
+        }
+      },
+      "closure": true,
+      "composable_with": ["P0", "P2", "P5"],
+      "stabilizers": [
+        "S1_verification",
+        "S2_reversible",
+        "S3_independent"
+      ],
+      "parent": "P0"
+    }
+  },
+
+  "entities": {
+    "T":      {"type": "function",   "rule": "P1", "parent": "P0"},
+    "V":      {"type": "function",   "rule": "P1", "parent": "P0"},
+    "I":      {"type": "abstract",   "rule": "P0", "parent": "P0"},
+    "M":      {"type": "substrate",  "rule": "P0", "parent": "P0"},
+    "S":      {"type": "set",        "rule": "P2", "parent": "P0"},
+    "P":      {"type": "set",        "rule": "P2", "parent": "P0"},
+    "C":      {"type": "scalar",     "rule": "P3", "parent": "P0"},
+    "Sig":    {"type": "scalar",     "rule": "P3", "parent": "P0"},
+    "Phi":    {"type": "function",   "rule": "P4", "parent": "P0"},
+    "F_0":    {"type": "scalar",     "rule": "P6", "parent": "P0"},
+    "F_n":    {"type": "scalar",     "rule": "P6", "parent": "P0"},
+    "eps_i":  {"type": "scalar",     "rule": "P6", "parent": "P0"},
+    "R1":     {"type": "replicator", "rule": "P0", "parent": "P0",
+               "fidelity": "physical"},
+    "R2":     {"type": "replicator", "rule": "P0", "parent": "P0",
+               "fidelity": "interpretive"},
+    "R3":     {"type": "replicator", "rule": "P0", "parent": "P0",
+               "fidelity": "logical",
+               "requires": "truth_filter"},
+    "R4":     {"type": "replicator", "rule": "P0", "parent": "P0",
+               "status": "reserved"}
+  },
+
+  "temes": {
+    "FMA": {
+      "type": "unit_teme",
+      "normal_form": {
+        "op": "eq",
+        "lhs": "F",
+        "rhs": {
+          "op": "mul",
+          "lhs": "M",
+          "rhs": "A"
+        }
+      },
+      "derivable_from": "P0",
+      "rule": "P0",
+      "parent": "P0",
+      "closure_under": ["P0"],
+      "collapse_if": "P2_conflation"
+    }
+  },
+
+  "proofs": {
+    "proof_P1_from_P0": {
+      "path": ["P0", "P1"],
+      "start": {
+        "op": "independence",
+        "lhs": {
+          "op": "apply",
+          "fn": "V",
+          "arg": "I"
+        },
+        "rhs": "M"
+      },
+      "end": {
+        "op": "eq",
+        "lhs": {
+          "op": "partial_deriv",
+          "num": "T",
+          "den": "V"
+        },
+        "rhs": 0
+      },
+      "valid": true
+    },
+    "proof_P6_collapse": {
+      "path": ["P0", "P6", "P5"],
+      "start": {
+        "op": "eq",
+        "lhs": "F_0",
+        "rhs": 1
+      },
+      "end": {
+        "op": "limit",
+        "var": "n",
+        "to": "inf",
+        "result": {
+          "op": "eq",
+          "lhs": "F_n",
+          "rhs": 0
+        }
+      },
+      "valid": true
+    }
+  }
+}
