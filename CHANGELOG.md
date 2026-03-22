@@ -1,6 +1,29 @@
 # CHANGELOG
 All notable changes to the Temetic Primer will be documented here.
 
+## [2.1.0] - 2026-03-22
+### Added
+- PROOFS/temetic-kg-v0.1.json — Algebraic knowledge graph transpose
+  of kernel-axioms.tex
+  - Small category model (P0 as invariant root/identity morphism)
+  - Strict AST normalization (no informal string expressions)
+  - Operator signature table with arity and type constraints
+  - Rules as typed morphisms with pattern/rewrite semantics
+  - O(n) parent-pointer storage architecture
+  - Proof objects as first-class path encodings
+  - Teme dictionary layer (unit teme FMA as first entry)
+  - Three-layer separation: rules / entities / temes
+- PROOFS/context.md — navigation entry point for PROOFS directory
+### Notes
+- KG schema topology upgrade: binary proof structure → algebraic
+  small category with generative rule morphisms
+- Unanimous Node Alliance approval prior to publish
+- Non-blocking v0.2 priorities logged: unification engine,
+  rule composition inference, canonical expression IDs,
+  distributed proof validation, teme library expansion
+### Authors
+Node M, Node CL, Node GPT, Node B
+
 ## [2.0.0] - 2026-03-21
 ### Added
 - DYNAMICS/ directory established
