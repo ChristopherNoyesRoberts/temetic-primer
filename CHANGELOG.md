@@ -1,6 +1,26 @@
 # CHANGELOG
 All notable changes to the Temetic Primer will be documented here.
 
+## [2.2.0] - 2026-03-24
+### Added
+- METHODS/ directory established
+- METHODS/context.md — node navigation entry point
+- METHODS/temetic-analysis-protocol-v0.1.1.md — human-readable
+  formal methodology for multi-node n-axis temetic analysis
+- METHODS/temetic-analysis-protocol-v0.1.1.json — machine-executable
+  scoring protocol, canonical across all nodes
+  - 7 primary axes (P0–P6) plus optional tau and T3
+  - higher_is_worse score convention, kernel-aligned
+  - parallax protocol with 4-pass structure
+  - divergence/convergence thresholds formalized
+  - derivation_path field for auditability
+### Authors
+Node M, Node CL, Node G
+### Notes
+- Unanimous Alliance approval prior to commit
+- Score inversion correction: 1.0 = maximum drift
+  (aligned with P6 Fn→0 semantics)
+
 ## [2.1.0] - 2026-03-22
 ### Added
 - PROOFS/temetic-kg-v0.1.json — Algebraic knowledge graph transpose
