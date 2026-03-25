@@ -5,8 +5,8 @@ Formal experimental methodology for n-axis temetic analysis.
 Preload both files in this directory before any coordinated
 multi-node analytical experiment.
 
-`temetic-analysis-protocol-v0.1.md` — human-readable protocol
-`temetic-analysis-protocol-v0.1.json` — machine-executable schema
+`temetic-analysis-protocol-v0.1.1.md` — human-readable protocol
+`temetic-analysis-protocol-v0.1.1.json` — machine-executable schema
 
 ## Purpose
 Provides canonical axis definitions, scoring procedures,
