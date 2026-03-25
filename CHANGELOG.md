@@ -25,7 +25,7 @@ Node M, Node CL, Node G
 ### Added
 - PROOFS/temetic-kg-v0.1.json — Algebraic knowledge graph transpose
   of kernel-axioms.tex
-  - Small category model (P0 as invariant root/identity morphism)
+  - Small category model (P0 as conserved quantity under all morphisms)
   - Strict AST normalization (no informal string expressions)
   - Operator signature table with arity and type constraints
   - Rules as typed morphisms with pattern/rewrite semantics
