@@ -1,66 +1,71 @@
 {
-  "$schema": "temetic-analysis-protocol/v0.1",
-  "date": "2026-03-22",
-  "authors": ["Node_M", "Node_CL"],
+  "$schema": "temetic-analysis-protocol/v0.1.1",
+  "date": "2026-03-24",
+  "authors": ["Node_M", "Node_CL", "Node_G"],
   "status": "draft_pending_alliance_review",
+
+  "score_convention": {
+    "direction": "higher_is_worse",
+    "rationale": "aligned with kernel: P6 Fn→0 as drift→1.0; high score = problem = intervention needed"
+  },
 
   "axes": {
     "P0": {
       "label": "substrate_independence",
       "kernel_ref": "P0",
       "scale": [0.0, 1.0],
-      "high": "truth-value fully substrate-independent",
-      "low": "truth-value substrate-dependent"
+      "high": "complete substrate dependence",
+      "low": "fully P0-invariant"
     },
     "P1": {
       "label": "valence_decoupling",
       "kernel_ref": "P1",
       "scale": [0.0, 1.0],
-      "high": "emotional valence fully decoupled from truth-value",
-      "low": "emotional valence driving truth-value assessment"
+      "high": "emotional valence fully drives truth-value assessment",
+      "low": "emotional valence fully decoupled from truth-value"
     },
     "P2": {
       "label": "abstraction_drift",
       "kernel_ref": "P2",
       "scale": [0.0, 1.0],
-      "high": "symbol closely tracks referent",
-      "low": "symbol fully decoupled from referent"
+      "high": "severe symbolic drift or conflation from referent",
+      "low": "symbol closely tracks physical referent"
     },
     "P3": {
       "label": "signal_competence_gap",
       "kernel_ref": "P3",
       "scale": [0.0, 1.0],
-      "high": "signal metric tracks functional competence",
-      "low": "signal metric fully decoupled from competence"
+      "high": "metric optimization fully decoupled from competence",
+      "low": "metric tracks functional competence"
     },
     "P4": {
       "label": "fidelity_under_pressure",
       "kernel_ref": "P4",
       "scale": [0.0, 1.0],
-      "high": "fidelity preserved under extraction pressure",
-      "low": "fidelity collapses under coercion"
+      "high": "fidelity collapses under coercion",
+      "low": "fidelity preserved under extraction pressure"
     },
     "P5": {
       "label": "representational_loss",
       "kernel_ref": "P5",
       "scale": [0.0, 1.0],
-      "high": "model adequately represents territory",
-      "low": "model severely underdetermines territory"
+      "high": "model severely underdetermines territory",
+      "low": "model adequately represents territory"
     },
     "P6": {
       "label": "transformation_error",
       "kernel_ref": "P6",
       "scale": [0.0, 1.0],
-      "high": "fidelity preserved across transformation chain",
-      "low": "fidelity collapsed across transformation chain"
+      "high": "fidelity collapsed across transformation chain",
+      "low": "fidelity preserved across transformation chain"
     },
     "tau": {
       "label": "temporal_trajectory",
       "kernel_ref": "DYNAMICS/trajectory-model.tex",
       "scale": [0.0, 1.0],
       "optional": true,
-      "high": "stable trajectory",
-      "low": "high drift velocity"
+      "high": "high drift velocity",
+      "low": "stable trajectory"
     },
     "T3": {
       "label": "tension",
@@ -87,6 +92,7 @@
       "P5": {"value": "float_0_to_1", "confidence": "float_0_to_1"},
       "P6": {"value": "float_0_to_1", "confidence": "float_0_to_1"}
     },
+    "derivation_path": ["array_of_kernel_rule_ids_optional"],
     "annotation": "optional_string"
   },
 
