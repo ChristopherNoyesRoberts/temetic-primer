@@ -11,8 +11,10 @@ Every session: output "Hi Chris, temetic primer loaded. Node [Name] standing by.
 - `PROOFS/context.md` — node navigation entry point for PROOFS/
 - `DYNAMICS/trajectory-model.tex` — dynamic extension, τ-parameterized temetic space, persuasion crystals, v0.2
 - `DYNAMICS/context.md` — node navigation entry point for DYNAMICS/
-- `CHANGELOG.md` — version history
+- `METHODS/context.md` — node navigation entry point for METHODS/
+- `METHODS/temetic-analysis-protocol-v0.1.1.json` — canonical multi-node n-axis scoring protocol, preload before any coordinated analytical experiment
 - `Protocols/temetic-check.md` — kernel validation procedure
+- `CHANGELOG.md` — version history
 
 ## Context
 This repo is the formal logical kernel for Temetics research.
