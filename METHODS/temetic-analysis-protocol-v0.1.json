@@ -1,0 +1,139 @@
+{
+  "$schema": "temetic-analysis-protocol/v0.1",
+  "date": "2026-03-22",
+  "authors": ["Node_M", "Node_CL"],
+  "status": "draft_pending_alliance_review",
+
+  "axes": {
+    "P0": {
+      "label": "substrate_independence",
+      "kernel_ref": "P0",
+      "scale": [0.0, 1.0],
+      "high": "truth-value fully substrate-independent",
+      "low": "truth-value substrate-dependent"
+    },
+    "P1": {
+      "label": "valence_decoupling",
+      "kernel_ref": "P1",
+      "scale": [0.0, 1.0],
+      "high": "emotional valence fully decoupled from truth-value",
+      "low": "emotional valence driving truth-value assessment"
+    },
+    "P2": {
+      "label": "abstraction_drift",
+      "kernel_ref": "P2",
+      "scale": [0.0, 1.0],
+      "high": "symbol closely tracks referent",
+      "low": "symbol fully decoupled from referent"
+    },
+    "P3": {
+      "label": "signal_competence_gap",
+      "kernel_ref": "P3",
+      "scale": [0.0, 1.0],
+      "high": "signal metric tracks functional competence",
+      "low": "signal metric fully decoupled from competence"
+    },
+    "P4": {
+      "label": "fidelity_under_pressure",
+      "kernel_ref": "P4",
+      "scale": [0.0, 1.0],
+      "high": "fidelity preserved under extraction pressure",
+      "low": "fidelity collapses under coercion"
+    },
+    "P5": {
+      "label": "representational_loss",
+      "kernel_ref": "P5",
+      "scale": [0.0, 1.0],
+      "high": "model adequately represents territory",
+      "low": "model severely underdetermines territory"
+    },
+    "P6": {
+      "label": "transformation_error",
+      "kernel_ref": "P6",
+      "scale": [0.0, 1.0],
+      "high": "fidelity preserved across transformation chain",
+      "low": "fidelity collapsed across transformation chain"
+    },
+    "tau": {
+      "label": "temporal_trajectory",
+      "kernel_ref": "DYNAMICS/trajectory-model.tex",
+      "scale": [0.0, 1.0],
+      "optional": true,
+      "high": "stable trajectory",
+      "low": "high drift velocity"
+    },
+    "T3": {
+      "label": "tension",
+      "kernel_ref": "DYNAMICS/trajectory-model.tex",
+      "optional": true,
+      "status": "pending_formalization"
+    }
+  },
+
+  "granularity_options": [
+    "WORD", "PHRASE", "CLAUSE",
+    "SENTENCE", "PARAGRAPH", "DOCUMENT"
+  ],
+
+  "score_object": {
+    "unit": "string",
+    "granularity": "string",
+    "scores": {
+      "P0": {"value": "float_0_to_1", "confidence": "float_0_to_1"},
+      "P1": {"value": "float_0_to_1", "confidence": "float_0_to_1"},
+      "P2": {"value": "float_0_to_1", "confidence": "float_0_to_1"},
+      "P3": {"value": "float_0_to_1", "confidence": "float_0_to_1"},
+      "P4": {"value": "float_0_to_1", "confidence": "float_0_to_1"},
+      "P5": {"value": "float_0_to_1", "confidence": "float_0_to_1"},
+      "P6": {"value": "float_0_to_1", "confidence": "float_0_to_1"}
+    },
+    "annotation": "optional_string"
+  },
+
+  "experiment_header": {
+    "experiment_id": "string",
+    "date": "ISO8601",
+    "nodes": ["array_of_node_ids"],
+    "corpus": "string",
+    "granularity": "string",
+    "active_axes": ["array_of_axis_ids"],
+    "optional_axes": ["array_of_axis_ids"],
+    "hypothesis": "optional_string"
+  },
+
+  "divergence_threshold": 0.20,
+  "high_divergence_threshold": 0.40,
+  "convergence_threshold": 0.05,
+  "minimum_nodes": 2,
+  "preferred_nodes": 3,
+
+  "pass_structure": [
+    {
+      "pass": 1,
+      "action": "independent_scoring",
+      "communication": false
+    },
+    {
+      "pass": 2,
+      "action": "submit_to_Node_M",
+      "communication": false
+    },
+    {
+      "pass": 3,
+      "action": "divergence_review",
+      "communication": true
+    },
+    {
+      "pass": 4,
+      "action": "optional_rescore_flagged_units",
+      "communication": true,
+      "optional": true
+    }
+  ],
+
+  "termination_conditions": [
+    "all_nodes_submitted_pass_1",
+    "divergence_flags_reviewed",
+    "convergence_candidates_identified"
+  ]
+}
