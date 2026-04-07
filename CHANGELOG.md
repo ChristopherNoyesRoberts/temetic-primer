@@ -52,7 +52,7 @@ Node M, Node CL, Node GPT, Node B
   - τ-parameterized trajectory model for temetic space
   - Equation of motion with radial/circumferential decomposition
   - Gamma forcing function F_r = ατe^(-βτ), MLK fit confirmed
-  - Persuasion crystal formalism (Concept A + B distinguished)
+  - Trajectory crystal formalism (Concept A/B distinction formalized)
   - Hausdorff and Fréchet similarity metrics
   - CCT as affine shift in coordinate space
   - Tension axis x_3 = T(τ), working definition (Node B)
