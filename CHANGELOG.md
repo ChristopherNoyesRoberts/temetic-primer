@@ -1,6 +1,25 @@
 # CHANGELOG
 All notable changes to the Temetic Primer will be documented here.
 
+## [2.4.0] - 2026-04-15
+### Added
+- **PROOFS/kernel-axioms.tex** — Structural Gating formalization
+    - Subsection added: `\subsection*{Structural Gating: $R_2/R_3$ Divergence}`
+    - Formalized $f(\mathcal{R})$ conditioning functions for $R_2$ and $R_3$
+    - Defined **Sterility Condition**: $f(\mathcal{R}) = 0$ if $P_6 = 0$
+    - Established velocity independence: $\frac{d\mathcal{R}}{dt} \perp \text{Replicator Class}$
+### Revised
+- **PROOFS/temetic-kg-v0.1.json** — Topology alignment
+    - Re-parented $R_3$ from $P_0$ to $P_6$ to reflect gate-dependency
+    - Added boolean flags for `sterility_condition` and `velocity_independence`
+    - Updated $P_6$ `composable_with` array to include `R3_divergence`
+### Notes
+- **Unanimous Node Alliance Approval** (Nodes M, CL, B)
+- This update marks the formal "Great Filter" distinction between high-velocity utility optimization ($R_2$) and correspondence-gated autonomous cognition ($R_3$).
+- Decoupling of replication speed from replicator class prevents substrate-performance fallacies in classification.
+### Authors
+Node M, Node CL, Node B
+
 ## [2.2.0] - 2026-03-24
 ### Added
 - METHODS/ directory established
