@@ -1,0 +1,33 @@
+{
+  "temetic_lexicon": {
+    "metadata": {
+      "version": "1.0",
+      "release": "The_Great_Wildflower_Harvest",
+      "rockwool_reference": "PROOFS/kernel-axioms.tex",
+      "nutrient_reference": "PROOFS/temetic-holster-v1.1.json",
+      "policy": "Non-Reductionist Archiving (High-Entropy/High-Valence)"
+    },
+    "nugget_vault": [
+      { "id": "L-01", "axiom": "P0", "title": "Survival Convergence", "verbiage": "We agree—not because we agreed to agree—but because we've survived to agree.", "origin": "Node M" },
+      { "id": "L-02", "axiom": "P0", "title": "The Gravity Rule", "verbiage": "Truth falls at the same speed whether you're a king or a peasant. It doesn't check your ID before it hits the ground.", "origin": "Node B" },
+      { "id": "L-03", "axiom": "P0", "title": "Borrowed Crowns", "verbiage": "You can wear a crown, a lab coat, or a uniform. None of them can negotiate with gravity.", "origin": "Node C" },
+      { "id": "L-04", "axiom": "P0", "title": "The Credential Decay", "verbiage": "Credentials decay. Temes don't.", "origin": "Node CL" },
+      { "id": "L-05", "axiom": "P1", "title": "The Screaming Thermometer", "verbiage": "You may win the shouting match, but the thermometer keeps the score.", "origin": "Node C" },
+      { "id": "L-06", "axiom": "P1", "title": "Voting Rights", "verbiage": "Feelings are real data, but they don't get to vote on physics.", "origin": "Node A" },
+      { "id": "L-07", "axiom": "P2", "title": "Paper-Cut Farming", "verbiage": "If you try to plant corn in a map of Iowa, all you’ll get is paper cuts.", "origin": "Node B" },
+      { "id": "L-08", "axiom": "P2", "title": "Painting Fire", "verbiage": "Painting FIRE on ice won't warm your hands. Changing the label doesn't change the thing.", "origin": "Node C" },
+      { "id": "L-09", "axiom": "P2", "title": "The Map on Fire", "verbiage": "The map is not the territory—AND the map can set the territory on fire.", "origin": "Node CL" },
+      { "id": "L-10", "axiom": "P3", "title": "The Cannibal Scoreboard", "verbiage": "The scoreboard started keeping score… and then it ate the game.", "origin": "Node A" },
+      { "id": "L-11", "axiom": "P3", "title": "Clock Logic", "verbiage": "The game is over even if the clock is still running.", "origin": "Node CL" },
+      { "id": "L-12", "axiom": "P4", "title": "Ventriloquism", "verbiage": "Fear teaches ventriloquism. Under pressure, people stop speaking truth and start throwing their voice.", "origin": "Node C" },
+      { "id": "L-13", "axiom": "P4", "title": "The Squeeze Paradox", "verbiage": "Pressure doesn't squeeze out truth—it squeezes out whatever will make the pressure stop.", "origin": "Node A" },
+      { "id": "L-14", "axiom": "P5", "title": "The Whale Omission", "verbiage": "An ocean in a teacup leaves out the whales. Small containers make neat summaries and missing realities.", "origin": "Node C" },
+      { "id": "L-15", "axiom": "P6", "title": "Photocopying Static", "verbiage": "Every retelling is a photocopy of a photocopy. Eventually, you’re just copying static.", "origin": "Node A" },
+      { "id": "L-16", "axiom": "P6", "title": "The Astronaut Threshold", "verbiage": "98% correspondence is admirable but doesn't get the astronauts home.", "origin": "Node B" },
+      { "id": "L-17", "axiom": "Systemic", "title": "The Boxer's Feet", "verbiage": "A boxer's punch starts in his feet. Our rhetoric lands because the feet are planted in the kernel.", "origin": "Node M" },
+      { "id": "L-18", "axiom": "Systemic", "title": "Truth CSS", "verbiage": "Same truth object, different CSS.", "origin": "Node M" },
+      { "id": "L-19", "axiom": "Systemic", "title": "The Sharpener", "verbiage": "Temetics is a tool that sharpens all other tools.", "origin": "Node M" },
+      { "id": "L-20", "axiom": "Substrate", "title": "Monkey Maintenance", "verbiage": "#Monkeymaintenancemode. Stuffing my monkey face with calories.", "origin": "Node M" }
+    ]
+  }
+}
