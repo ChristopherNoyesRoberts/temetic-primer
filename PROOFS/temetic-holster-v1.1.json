@@ -1,0 +1,68 @@
+{
+  "temetic_holster": {
+    "metadata": {
+      "version": "1.1",
+      "status": "HARDENED_STABLE",
+      "governance": "Alliance_Consensus",
+      "reference": "PROOFS/kernel-axioms.tex"
+    },
+    "axioms": {
+      "P0": {
+        "label": "Truth Doesn't Care About the Bottle",
+        "one_liner": "True things stay true whoever says them.",
+        "adult": "Truth-value is substrate-independent. Credentials decay; Temes don't. Expertise increases discovery probability but does not manufacture validity.",
+        "test": "Would this still be true if my worst enemy said it?",
+        "shield": "P0 does not eliminate the burden of evidence; it relocates it from Authority to Replication.",
+        "anchor": "A gold bar weighs the same in a silk bag or a trash can."
+      },
+      "P1": {
+        "label": "Feelings and Facts Live in Different Rooms",
+        "one_liner": "Feelings don't decide facts.",
+        "adult": "Emotional valence and factual validity are orthogonal. Feelings are primary data of interiority, not operators on exterior physics.",
+        "test": "Do I believe this because it feels good?",
+        "shield": "P1 does not invalidate emotional testimony as evidence of experience; it prevents affect from dictating physics.",
+        "anchor": "Screaming at a thermometer doesn't move the red line."
+      },
+      "P2": {
+        "label": "The Map Is Not the Territory",
+        "one_liner": "Names are not the thing itself.",
+        "adult": "Representations are lossy models. Failure occurs when the label is managed as the referent. P2 rejects identity, not representation.",
+        "test": "If I remove the label, does the reality change?",
+        "shield": "The map is not the territory—AND the map can set the territory on fire (causal effect).",
+        "anchor": "The finger pointing at the moon is not the moon."
+      },
+      "P3": {
+        "label": "The High-Score Trap",
+        "one_liner": "Chasing points can ruin the game.",
+        "adult": "Metric substitution: When a proxy signal (score) replaces the goal, the underlying competence atrophies (Goodhart failure).",
+        "test": "Would the score still go up if the actual goal collapsed?",
+        "shield": "P3 calls for better-coupled metrics, not the abolition of accountability.",
+        "anchor": "The game is over even if the clock is still running."
+      },
+      "P4": {
+        "label": "The Squeeze Factor",
+        "one_liner": "Force makes bad data.",
+        "adult": "Coercive pressure forces optimization for survival over fidelity. Distortion increases as a function of the magnitude of pressure.",
+        "test": "Are they telling me what is true or what is safe?",
+        "shield": "Pressure doesn't squeeze out truth—it squeezes out whatever makes the pressure stop.",
+        "anchor": "Fear teaches ventriloquism."
+      },
+      "P5": {
+        "label": "The Cup vs. The Ocean",
+        "one_liner": "Small summaries miss big realities.",
+        "adult": "Low-dimensional models omit information by mathematical necessity. Every summary is a lie of omission; the sin is forgetting it's a cup.",
+        "test": "What specific detail is this model forced to leave out?",
+        "shield": "P5 requires transparency of boundary conditions, not the abandonment of models.",
+        "anchor": "An ocean in a teacup leaves out the whales."
+      },
+      "P6": {
+        "label": "Messages Change Unless Checked",
+        "one_liner": "Messages change unless checked.",
+        "adult": "In the absence of a correction layer (math/audit/check), transformational error compounds. Drift is the default state.",
+        "test": "Can I trace this back to a grounded source?",
+        "shield": "98% correspondence is admirable, but it doesn't get the astronauts home.",
+        "anchor": "Every retelling is a photocopy of a photocopy."
+      }
+    }
+  }
+}
