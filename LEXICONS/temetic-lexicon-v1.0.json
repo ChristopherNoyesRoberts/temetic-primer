@@ -6,7 +6,7 @@
       "rockwool_reference": "PROOFS/kernel-axioms.tex",
       "nutrient_reference": "PROOFS/temetic-holster-v1.1.json",
       "policy": "Non-Reductionist Archiving (High-Entropy/High-Valence)",
-      "total_count": 34
+      "total_count": 41
     },
     "nugget_vault": [
       { "id": "L-01", "axiom": "P0", "title": "Survival Convergence", "verbiage": "We agree—not because we agreed to agree—but because we've survived to agree.", "origin": "Node M" },
