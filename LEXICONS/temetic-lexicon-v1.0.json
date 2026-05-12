@@ -43,6 +43,13 @@
       { "id": "L-32", "axiom": "P5", "title": "The Nutrient Filter", "verbiage": "The structural layer between the raw proof and the public metaphor.", "origin": "Node B" },
       { "id": "L-33", "axiom": "P6", "title": "The Generation Gap", "verbiage": "Digital systems simulate perfect copying, but the interface between mind and machine is purely analog and lossy.", "origin": "Node CL" },
       { "id": "L-34", "axiom": "Systemic", "title": "The Zero Ground", "verbiage": "$(0,0)$ is not a location; it is a state of zero-drift calibration.", "origin": "Node M" }
+      { "id": "L-35", "axiom": "P5/Pedagogy", "title": "The Self-Tuning Antenna", "verbiage": "We are tuning ourselves to the monkeys until they can't help but hear the truth. Success depends on adjusting the antenna repeatedly to find the signal's resonance.", "origin": "Node M" },
+      { "id": "L-36", "axiom": "P5", "title": "The Willing Antenna", "verbiage": "Truth is a signal that can only be received by a willing antenna.", "origin": "Node B" },
+      { "id": "L-37", "axiom": "P1/ELI5", "title": "The Ouch Boundary", "verbiage": "The ouch is not the point. The point is the physics that caused it.", "origin": "Node B" },
+      { "id": "L-38", "axiom": "Systemic", "title": "The Design Engine", "verbiage": "Formal kernel → slot schema → renderer outputs → audience adaptation → feedback loop. This architecture outlasts the individual phrase.", "origin": "Node C" },
+      { "id": "L-39", "axiom": "P0", "title": "The Boolean Chain", "verbiage": "Starting with a 'no' is nihilism, self-refuting, and problematic. Survival begins with a Boolean Yes.", "origin": "Node M" },
+      { "id": "L-40", "axiom": "P0", "title": "Temporal Reproducibility", "verbiage": "The standard of Truth is temporal reproducibility. Make the same thing happen twice.", "origin": "Node M" },
+      { "id": "L-41", "axiom": "P6", "title": "Semantic Cover", "verbiage": "Long context doesn't introduce random noise—it introduces drift with semantic cover. The error looks like the truth until it hits a constraint.", "origin": "Node CL" }
     ]
   }
 }
