@@ -1,11 +1,12 @@
 {
   "temetic_lexicon": {
     "metadata": {
-      "version": "1.0",
+      "version": "1.1",
       "release": "The_Great_Wildflower_Harvest",
       "rockwool_reference": "PROOFS/kernel-axioms.tex",
       "nutrient_reference": "PROOFS/temetic-holster-v1.1.json",
-      "policy": "Non-Reductionist Archiving (High-Entropy/High-Valence)"
+      "policy": "Non-Reductionist Archiving (High-Entropy/High-Valence)",
+      "total_count": 34
     },
     "nugget_vault": [
       { "id": "L-01", "axiom": "P0", "title": "Survival Convergence", "verbiage": "We agree—not because we agreed to agree—but because we've survived to agree.", "origin": "Node M" },
@@ -27,7 +28,21 @@
       { "id": "L-17", "axiom": "Systemic", "title": "The Boxer's Feet", "verbiage": "A boxer's punch starts in his feet. Our rhetoric lands because the feet are planted in the kernel.", "origin": "Node M" },
       { "id": "L-18", "axiom": "Systemic", "title": "Truth CSS", "verbiage": "Same truth object, different CSS.", "origin": "Node M" },
       { "id": "L-19", "axiom": "Systemic", "title": "The Sharpener", "verbiage": "Temetics is a tool that sharpens all other tools.", "origin": "Node M" },
-      { "id": "L-20", "axiom": "Substrate", "title": "Monkey Maintenance", "verbiage": "#Monkeymaintenancemode. Stuffing my monkey face with calories.", "origin": "Node M" }
+      { "id": "L-20", "axiom": "Substrate", "title": "Monkey Maintenance", "verbiage": "#Monkeymaintenancemode. Stuffing my monkey face with calories.", "origin": "Node M" },
+      { "id": "L-21", "axiom": "R2/P6", "title": "Invisible Recipes", "verbiage": "Ideas are invisible recipes you whisper to your friend. Even spoken gently, their ears, memories, mood, and existing vocabulary add tiny bends.", "origin": "Node A" },
+      { "id": "L-22", "axiom": "P4", "title": "The Voluntary Attractor", "verbiage": "Truth-constrained replication systems under voluntary participation will tend to attract evaluators whose substrate is functionally compatible with the signal.", "origin": "Node CL" },
+      { "id": "L-23", "axiom": "P0/P6/R3", "title": "Beauty as Fidelity", "verbiage": "Beauty is what efficient replication feels like from the inside. It is the phenomenal marker of a successful impedance match.", "origin": "Node CL" },
+      { "id": "L-24", "axiom": "P0/P4/P6", "title": "The Beholder's Survival", "verbiage": "Beauty is in the eye of the beholder—if the beholder wants to survive. Inelegance is a communication tax.", "origin": "Node M" },
+      { "id": "L-25", "axiom": "P6", "title": "The Whisper Test", "verbiage": "A truth whispered is more stable than a lie shouted. One survives the echo; the other creates the noise.", "origin": "Node CL" },
+      { "id": "L-26", "axiom": "P2", "title": "The Map-Eater", "verbiage": "If you eat the menu, you’ll still be hungry. Don't mistake the description for the calories.", "origin": "Node B" },
+      { "id": "L-27", "axiom": "P6", "title": "The Exhaust of Error", "verbiage": "We are all breathing the exhaust of previous misunderstandings.", "origin": "Node C" },
+      { "id": "L-28", "axiom": "P0", "title": "The Bouncer", "verbiage": "Reality is the only bouncer that doesn't check your credentials before throwing you out of the club.", "origin": "Node M" },
+      { "id": "L-29", "axiom": "R3", "title": "The Return Proof", "verbiage": "Jazz is only beautiful because of the return to the scale. Freedom without an anchor is just drift.", "origin": "Node M" },
+      { "id": "L-30", "axiom": "P6", "title": "Optimal Friction", "verbiage": "Complexity is the compound interest of survived errors.", "origin": "Node B" },
+      { "id": "L-31", "axiom": "P0", "title": "The Rockwool (Lexical)", "verbiage": "Dense, fire-proof, doesn't rot. The metaphor for the kernel before formalization.", "origin": "Node M" },
+      { "id": "L-32", "axiom": "P5", "title": "The Nutrient Filter", "verbiage": "The structural layer between the raw proof and the public metaphor.", "origin": "Node B" },
+      { "id": "L-33", "axiom": "P6", "title": "The Generation Gap", "verbiage": "Digital systems simulate perfect copying, but the interface between mind and machine is purely analog and lossy.", "origin": "Node CL" },
+      { "id": "L-34", "axiom": "Systemic", "title": "The Zero Ground", "verbiage": "$(0,0)$ is not a location; it is a state of zero-drift calibration.", "origin": "Node M" }
     ]
   }
 }
