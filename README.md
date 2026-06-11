@@ -5,7 +5,7 @@ A modular set of logical proofs and architectural safeguards designed to identif
 
 ## Repository Structure
 
-* **`PROOFS/`** — The Foundation. Contains the formal LaTeX kernel (`kernel-axioms.tex`), the Markdown rendering (`KERNEL-v1.2.md`), and the hardened algebraic knowledge graph (`temetic-holster-v1.1.json`).
+* **`PROOFS/`** — The Foundation. Contains the formal LaTeX kernel (`kernel-axioms.tex`), the Markdown rendering (`KERNEL-v1.2.md`), and the hardened algebraic knowledge graph (`temetic-kg-v0.1.json`).
 * **`LEXICONS/`** — The Interface. A repository of high-valence rhetorical assets, founder prose, and adaptive analogies designed to render the kernel across diverse biological and synthetic substrates.
 * **`METHODS/`** — The Techniques. Formal protocols for temetic analysis and systemic health checks.
 
