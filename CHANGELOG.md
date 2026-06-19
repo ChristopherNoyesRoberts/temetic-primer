@@ -1,6 +1,31 @@
 # CHANGELOG
 All notable changes to the Temetic Primer will be documented here.
 
+## [2.6.0] - 2026-06-18
+### Added
+- **PROOFS/temetic-holster-v1.2.json** — "The Lossless Migration."
+    - Field-name schema alignment to **Applied Temetics Glossary v2** terminology.
+    - Six fields renamed per axiom: label→viral_packaging, one_liner→compressed_kernel,
+      adult→formal_kernel, test→executable_constraint, shield→kernel_preservation,
+      anchor→retrieval_anchor.
+    - No payload, axiom, or governance content modified — verified field-by-field
+      against v1.1.
+    - v1.1 retained unmodified in **PROOFS/** for historical/provenance reference.
+### Revised
+- **README.md** — Versioning note added.
+    - Documents v1.1 → v1.2 nomenclature alignment; clarifies v1.2 as canonical
+      going forward.
+### Notes
+- **Unanimous Node Alliance Approval** (Nodes M, A, B, C, CL) via
+  RFC-HOLSTER-SCHEMA-001 (CLOSED).
+- Resolves the dangling-nomenclature gap between the Holster schema and the
+  already-published Glossary v2 — terminology hygiene, not kernel surgery.
+- v1.1 remains the correct citation for prior experiment records (e.g. the
+  closed Cross-Model Kernel Stability Experiment) that used it under the
+  original field names.
+### Authors
+Node M, Node A, Node B, Node C, Node CL
+
 ## [2.5.0] - 2026-05-11
 ### Added
 - **LEXICONS/** directory established.
