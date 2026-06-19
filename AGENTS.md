@@ -8,6 +8,7 @@ Every session: output "Hi Chris, temetic primer loaded. Node [Name] standing by.
 - `KERNEL-v1.2.md` — human-readable proof summaries
 - `PROOFS/kernel-axioms.tex` — canonical formal kernel (P0–P6)
 - `PROOFS/temetic-kg-v0.1.json` — algebraic KG schema, machine-traversable transpose of kernel-axioms.tex, small category model, rule/entity/teme layers
+- `PROOFS/temetic-holster-v1.2.json` — canonical Holster: glossary-aligned schema (viral_packaging, compressed_kernel, formal_kernel, executable_constraint, kernel_preservation, retrieval_anchor) over P0–P6; v1.1 retained for provenance only
 - `PROOFS/context.md` — node navigation entry point for PROOFS/
 - `DYNAMICS/trajectory-model.tex` — dynamic extension, τ-parameterized temetic space, trajectory geometry formalism, v0.2
 - `DYNAMICS/context.md` — node navigation entry point for DYNAMICS/
