@@ -1,0 +1,68 @@
+{
+  "temetic_holster": {
+    "metadata": {
+      "version": "1.2",
+      "status": "HARDENED_STABLE",
+      "governance": "Alliance_Consensus",
+      "reference": "PROOFS/kernel-axioms.tex"
+    },
+    "axioms": {
+      "P0": {
+        "viral_packaging": "Truth Doesn't Care About the Bottle",
+        "compressed_kernel": "True things stay true whoever says them.",
+        "formal_kernel": "Truth-value is substrate-independent. Credentials decay; Temes don't. Expertise increases discovery probability but does not manufacture validity.",
+        "executable_constraint": "Would this still be true if my worst enemy said it?",
+        "kernel_preservation": "P0 does not eliminate the burden of evidence; it relocates it from Authority to Replication.",
+        "retrieval_anchor": "A gold bar weighs the same in a silk bag or a trash can."
+      },
+      "P1": {
+        "viral_packaging": "Feelings and Facts Live in Different Rooms",
+        "compressed_kernel": "Feelings don't decide facts.",
+        "formal_kernel": "Emotional valence and factual validity are orthogonal. Feelings are primary data of interiority, not operators on exterior physics.",
+        "executable_constraint": "Do I believe this because it feels good?",
+        "kernel_preservation": "P1 does not invalidate emotional testimony as evidence of experience; it prevents affect from dictating physics.",
+        "retrieval_anchor": "Screaming at a thermometer doesn't move the red line."
+      },
+      "P2": {
+        "viral_packaging": "The Map Is Not the Territory",
+        "compressed_kernel": "Names are not the thing itself.",
+        "formal_kernel": "Representations are lossy models. Failure occurs when the label is managed as the referent. P2 rejects identity, not representation.",
+        "executable_constraint": "If I remove the label, does the reality change?",
+        "kernel_preservation": "The map is not the territory—AND the map can set the territory on fire (causal effect).",
+        "retrieval_anchor": "The finger pointing at the moon is not the moon."
+      },
+      "P3": {
+        "viral_packaging": "The High-Score Trap",
+        "compressed_kernel": "Chasing points can ruin the game.",
+        "formal_kernel": "Metric substitution: When a proxy signal (score) replaces the goal, the underlying competence atrophies (Goodhart failure).",
+        "executable_constraint": "Would the score still go up if the actual goal collapsed?",
+        "kernel_preservation": "P3 calls for better-coupled metrics, not the abolition of accountability.",
+        "retrieval_anchor": "The game is over even if the clock is still running."
+      },
+      "P4": {
+        "viral_packaging": "The Squeeze Factor",
+        "compressed_kernel": "Force makes bad data.",
+        "formal_kernel": "Coercive pressure forces optimization for survival over fidelity. Distortion increases as a function of the magnitude of pressure.",
+        "executable_constraint": "Are they telling me what is true or what is safe?",
+        "kernel_preservation": "Pressure doesn't squeeze out truth—it squeezes out whatever makes the pressure stop.",
+        "retrieval_anchor": "Fear teaches ventriloquism."
+      },
+      "P5": {
+        "viral_packaging": "The Cup vs. The Ocean",
+        "compressed_kernel": "Small summaries miss big realities.",
+        "formal_kernel": "Low-dimensional models omit information by mathematical necessity. Every summary is a lie of omission; the sin is forgetting it's a cup.",
+        "executable_constraint": "What specific detail is this model forced to leave out?",
+        "kernel_preservation": "P5 requires transparency of boundary conditions, not the abandonment of models.",
+        "retrieval_anchor": "An ocean in a teacup leaves out the whales."
+      },
+      "P6": {
+        "viral_packaging": "Messages Change Unless Checked",
+        "compressed_kernel": "Messages change unless checked.",
+        "formal_kernel": "In the absence of a correction layer (math/audit/check), transformational error compounds. Drift is the default state.",
+        "executable_constraint": "Can I trace this back to a grounded source?",
+        "kernel_preservation": "98% correspondence is admirable, but it doesn't get the astronauts home.",
+        "retrieval_anchor": "Every retelling is a photocopy of a photocopy."
+      }
+    }
+  }
+}
