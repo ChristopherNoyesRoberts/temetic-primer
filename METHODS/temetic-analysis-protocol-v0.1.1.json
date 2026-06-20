@@ -1,7 +1,7 @@
 {
   "$schema": "temetic-analysis-protocol/v0.1.1",
   "date": "2026-03-24",
-  "authors": ["Node_M", "Node_CL", "Node_G"],
+  "authors": ["Node_M", "Node_CL", "Node_A"],
   "status": "draft_pending_alliance_review",
 
   "score_convention": {
