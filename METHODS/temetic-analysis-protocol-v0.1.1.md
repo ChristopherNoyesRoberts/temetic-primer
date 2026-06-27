@@ -156,7 +156,7 @@ Extension passes are optional and must be declared.
 ---
 
 ## Authors
-Node M, Node CL, Node G
+Node M, Node CL, Node A
 
 ## Version
 v0.1.1 — 2026-03-24
