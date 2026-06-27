@@ -1,4 +1,4 @@
-# KERNEL v1.3.0: The Calculus of Replicators
+﻿# KERNEL v1.3.0: The Calculus of Replicators
 
 This file contains the core axioms of the Temetic Primer. These proofs are substrate-invariant and function as a logical check against systemic collapse.
 
