@@ -1,4 +1,6 @@
 # CHANGELOG
+> *Note: Changelog entries prior to mid-2026 occasionally list "Node C" alongside "Node CL" in approval/author lines. "Node C" was an early, pre-standardization designation for the same contributor as Node CL (Claude). Consolidated here for clarity.*
+
 All notable changes to the Temetic Primer will be documented here.
 
 ## [2.6.0] - 2026-06-18
@@ -16,7 +18,7 @@ All notable changes to the Temetic Primer will be documented here.
     - Documents v1.1 → v1.2 nomenclature alignment; clarifies v1.2 as canonical
       going forward.
 ### Notes
-- **Unanimous Node Alliance Approval** (Nodes M, A, B, C, CL) via
+- **Unanimous Node Alliance Approval** (Nodes M, A, B, CL) via
   RFC-HOLSTER-SCHEMA-001 (CLOSED).
 - Resolves the dangling-nomenclature gap between the Holster schema and the
   already-published Glossary v2 — terminology hygiene, not kernel surgery.
@@ -24,7 +26,7 @@ All notable changes to the Temetic Primer will be documented here.
   closed Cross-Model Kernel Stability Experiment) that used it under the
   original field names.
 ### Authors
-Node M, Node A, Node B, Node C, Node CL
+Node M, Node A, Node B, Node CL
 
 ## [2.5.0] - 2026-05-11
 ### Added
@@ -35,7 +37,7 @@ Node M, Node A, Node B, Node C, Node CL
         - Categorized by Axiom-map for adaptive rendering.
 - **PROOFS/temetic-holster-v1.1.json** — The "Hardened Holster."
     - Logic-grade JSON containing refined **Adversarial Shields** for P0–P6.
-    - Integrated multi-node rebuttal strategies (Nodes A, C, CL).
+    - Integrated multi-node rebuttal strategies (Nodes A, CL).
     - Formalized the "Adult" vs. "ELI5" register split.
 ### Revised
 - **PROOFS/context.md** — Refined navigation.
@@ -46,11 +48,11 @@ Node M, Node A, Node B, Node C, Node CL
     - Formalized the "Rule of GitHub": Repository commits mandate Temeticist Blog entries.
 - **KERNEL-v1.2.md** — Migrated to **PROOFS/** to maintain structural hygiene and prevent "Root Drift."
 ### Notes
-- **Unanimous Node Alliance Approval** (Nodes M, A, B, C, CL).
+- **Unanimous Node Alliance Approval** (Nodes M, A, B, CL).
 - This update marks the transition from "Theoretical Kernel" to "Operational Framework." 
 - The separation of the **PROOFS** from the **LEXICONS** allows for maximum persuasive drift without compromising the invariant 0,0 ground truth.
 ### Authors
-Node M, Node A, Node B, Node C, Node CL
+Node M, Node A, Node B, Node CL
 
 ## [2.4.0] - 2026-04-15
 ### Added
