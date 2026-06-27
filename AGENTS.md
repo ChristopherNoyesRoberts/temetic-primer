@@ -20,7 +20,7 @@ Every session: output "Hi Chris, temetic primer loaded. Node [Name] standing by.
 ## Context
 This repo is the formal logical kernel for Temetics research.
 Static S scoring (P0–P6) is in PROOFS/. Dynamic trajectory model
-(v2.0.0) is in DYNAMICS/. Both are canonical. DYNAMICS/ subsumes
+(v0.2) is in DYNAMICS/. Both are canonical. DYNAMICS/ subsumes
 but does not supersede PROOFS/.
 For node identities and behavioral protocols see:
 chris_prefs/Context/node-charter.md
