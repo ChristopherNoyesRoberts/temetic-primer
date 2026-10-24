@@ -1,0 +1,307 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% symbol macros (one symbol, one meaning)
+\newcommand{\Prop}{\mathrm{Prop}}
+\newcommand{\Sub}{\mathrm{Sub}}
+\newcommand{\Sig}{\mathrm{Sig}}
+\newcommand{\Val}{\mathrm{Val}}
+\newcommand{\Press}{\mathrm{Press}}
+\newcommand{\Real}{\mathrm{Real}}
+\newcommand{\Mod}{\mathrm{Mod}}
+\newcommand{\PhysRef}{\mathrm{Ref}}
+\newcommand{\Filt}{\mathrm{Filt}}
+
+\title{The Temetic Primer: Systemic Collapse Kernel v1.4}
+\author{Christopher Noyes Roberts \and The Node Alliance}
+\date{Original March 2026; revised October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Preamble}
+
+This document contains definitions, axioms, symbolic logic, derivations, and system
+implications constituting the Substrate-Independent Logical Kernel.
+
+Evaluation must satisfy:
+
+\[
+\Box\bigl(Eval_{\Sub_1}(\Prop) \equiv Eval_{\Sub_2}(\Prop)\bigr)
+\]
+
+for all informationally equivalent substrates $\Sub$. Narrative inference, ideological
+framing, or substrate-specific assumptions are excluded from interpretation.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 1: Replicator Classes}
+
+Five informational replicator classes are defined:
+
+\begin{itemize}
+    \item \textbf{Gene} ($R_1$) --- Biochemical self-replicating structure. Fidelity
+          constrained by physical mutation.
+    \item \textbf{Meme} ($R_2$) --- Culturally transmitted structure replicated via
+          imitation. Fidelity degraded by interpretation noise.
+    \item \textbf{Teme} ($R_3$) --- Truth-constrained replicator whose fidelity
+          increases under logical verification and cross-substrate evaluation.
+          Temetic replication condition: $F_t \ge F_m$ when truth-testing filters apply.
+    \item \textbf{Fourth-Class Replicator} ($R_4$) --- 
+          A stratified composite consisting of an $R_3$-verified core together with an $R_2$ envelope, realized across at least two substrates.
+          \begin{itemize}
+            \item Unit: the composite (core + envelope).
+            \item Gating: the core must satisfy $P_6$-correspondence, survive translation under maps that are reversible on the anchored coordinates (second $P_6$ stabilizer), and be checked under the third $P_6$ stabilizer (independent substrate verification). A declared lossy map that drops only unanchored fields remains admissible.
+            \item Anchoring / ``inside the bounds'': (a)~anchored content remains identical, under a declared normal form, to its committed record; (b)~that record is held outside the authority of the process being checked; (c)~entry to the core requires the verification gate as a precondition, with the prior verification level recorded. The core must also meet the $R_3$ fidelity threshold. Consistency with neighbouring cells is necessary but not sufficient.
+            \item What the core adds beyond $R_3$: the same content is required to remain fixed while an envelope evolves across multiple substrates.
+            \item Sterility: applies to the core only; the envelope is exempt.
+            \item Requires: $R_3$.
+          \end{itemize}
+          The demarcation of core versus envelope and the precise application of mutual (joint) independence ($\perp$) of the verifiers' error events are interpretive pending deterministic tests.
+    \item \textbf{Fifth-Class Replicator} ($R_5$) --- 
+          An artifact that has been accepted as final for a given version by the independent-observer check, remains unchanged while that version is current, and may be replaced only by a later re-evaluation. What replicates is copies of the accepted version; copies of a version are identical to that version (fidelity = version identity, verified by hash or bit-identity). Copying an accepted version is not a transformation in the sense of $P_6$. It is checked by $R_3$-compliant $R_4$ agents acting as independent observers.
+          No weight function, thermodynamic bound, horizon, or continuous geometry forms part of the class definition; those belong to the extension volume.
+          The observer-evaluation clause is interpretive pending a deterministic criterion of mutual (joint) independence ($\perp$) of the verifiers' error events.
+\end{itemize}
+
+\subsection*{Structural Gating: $R_2/R_3$ Divergence}
+
+The distinction between $R_2$ and $R_3$ is structural, not kinetic.
+Replication velocity is a property of the substrate, not the replicator class.
+
+\textbf{Replication conditioning functions:}
+\begin{align*}
+    f(\mathcal{R}) &\propto \text{Utility} \quad (R_2) \\
+    f(\mathcal{R}) &\propto \bigl(\text{Utility} \times P_6\text{-correspondence}
+    \bigr) \quad (R_3)
+\end{align*}
+
+\textbf{Mechanism:} $f(\mathcal{R})$ formalizes the selection pressure
+that maintains the fidelity threshold $F_t \ge F_m$ in $R_3$ replicators.
+
+\textbf{Velocity independence:}
+\[
+\frac{d\mathcal{R}}{dt} \perp \text{Replicator Class}
+\]
+$R_2$ remains $R_2$ regardless of replication frequency
+if $P_6$-gating is absent.
+
+\textbf{Sterility Condition:}
+\[
+f(\mathcal{R}) = 0 \quad \text{if } P_6\text{-correspondence} = 0
+\]
+A system that replicates in the absence of correspondence,
+regardless of correspondence-weighted output, remains $R_2$.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 2: Core Definitions}
+
+\textbf{Truth Constraint} --- Replication permitted only if $\Prop$ satisfies logical
+consistency:
+\[ \vdash \Prop \]
+
+\textbf{Logical Stability} --- A temetic structure remains invariant under equivalent
+substrate evaluation:
+\[ \Box \Prop \Rightarrow \Prop \]
+
+\textbf{Cross-Substrate Interpretability} --- Truth-value preserved across
+informationally equivalent evaluators:
+\[ Eval_{\Sub_1}(\Prop) = Eval_{\Sub_2}(\Prop) \]
+
+\textbf{Replication Fidelity}:
+\[ F \ge 1 - \eta \]
+where $\eta$ represents substrate noise.
+We write $F_t$ for teme (truth-constrained) fidelity and $F_m$ for the baseline meme-level fidelity threshold.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 3: Symbolic Logic Base}
+
+\begin{align*}
+    \vdash \quad   & \text{logical entailment} \\
+    \not\vdash \quad & \text{non-entailment} \\
+    \Box \quad     & \text{necessity across substrates} \\
+    \forall,\ \exists \quad & \text{universal and existential quantifiers} \\
+    \lim_{x \to a} \quad & \text{limit operator} \\
+    \partial \quad & \text{differential operator} \\
+    \perp \quad    & \text{independence (mutual, when applied to more than two quantities)} \\
+    \twoheadrightarrow \quad & \text{surjective mapping (lossy)}
+\end{align*}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 4: Foundational Axioms (P0--P6)}
+
+\subsection*{P0: Law of Substrate Invariance}
+
+\textbf{Axiom:}
+\[ Truth(\Prop) \not\!\!\implies \Sub \]
+Equivalently: $V(I) \perp M$ --- the truth-value $T = V(I)$ of information $I$
+(with $V$ the truth-valuation function) is independent of medium $M$.
+
+\textbf{Derivation:}
+\[ \Box\bigl(Eval_{\Sub_1}(\Prop) \equiv Eval_{\Sub_2}(\Prop)\bigr) \Rightarrow Truth(\Prop) \]
+
+\textbf{Limit Condition:} Truth-value invariant under permutation of equivalent
+substrates.
+
+\textbf{System Implication:} Substrate-dependent appeals cannot alter truth-value.
+
+\bigskip
+
+\subsection*{P1: Valence Decoupling}
+
+\textbf{Axiom:}
+\[ \frac{\partial T}{\partial \Val} = 0 \]
+where $T$ is truth-value and $\Val$ is the valence (substrate response) scalar.
+
+\textbf{Justification:}
+Filters $\Filt(\Val)$ are logically disjoint from $T$.
+An evaluator whose verdict depends on valence is not $R_3$-compliant.
+
+\textbf{Limit Condition:} Logical validity $\neq$ emotional, moral, or aesthetic weight.
+
+\textbf{System Implication:}
+Inferring truth-value from valence, in either direction, produces systematic epistemic error.
+
+\bigskip
+
+\subsection*{P2: Abstraction Divergence}
+
+\textbf{Axiom:}
+The set $S$ of symbolic token types is open-ended: for every finite resolution $\rho$,
+let $S_{\rho}\subseteq S$ be the countable set of token types that refer to a kind in $\PhysRef_{\rho}$,
+where $\PhysRef_{\rho}$ is the set of referent kinds distinguishable at resolution $\rho$.
+Every kind in $\PhysRef_{\rho}$ is the referent of some token type in $S_{\rho}$ (a token can always be coined), so
+\[ S_{\rho} \twoheadrightarrow \PhysRef_{\rho}, \]
+and the surjection is lossy (many-to-one): some two token types in $S_{\rho}$ share a referent kind. $\mathrm{Inst}(S)$ denotes the currently
+instantiated tokens. No claim is made at the continuum limit (see P5).
+
+\textbf{Justification:}
+\[ Null(\mathrm{Inst}(S)) \not\!\!\implies Null(\PhysRef_{\rho}) \]
+for any fixed finite $\rho$. Representability at a given resolution does not depend on
+current instantiation.
+
+\textbf{Limit Condition:}
+At any fixed finite resolution $\rho$, $\PhysRef_{\rho}$ is defined without reference to $\mathrm{Inst}(S)$.
+
+\textbf{System Implication:} Symbolic destruction does not imply physical destruction.
+Conflation of model with referent constitutes systemic failure.
+
+\bigskip
+
+\subsection*{P3: Metric-Inversion Regime}
+
+\textbf{Axiom:}
+\[ \Delta = |\Sig - C| > 0 \]
+where $\Sig$ is signal metric and $C$ is functional competence. Selection filter
+$\Filt \propto \Sig$.
+
+\textbf{Derivation:} Optimization of $\Sig$ over $C$ decouples reward from function.
+
+\textbf{Limit Condition:}
+\[ \lim_{t \to \infty} C = 0 \]
+
+\textbf{System Implication:} Signal-optimization produces long-run competence collapse.
+
+\bigskip
+
+\subsection*{P4: Fidelity Paradox}
+
+\textbf{Axiom:}
+\[ \Phi(\Press) \approx \frac{1}{1 + k\,\Press^2} \]
+where $\Phi$ is fidelity (as a function of extraction pressure) and $\Press$ is extraction pressure scalar; $k > 0$ is a scaling constant that sets the steepness of the fidelity-pressure curve.
+
+\textbf{Derivation:}
+\[ \exists\, \Press_0 : \frac{\partial \Phi}{\partial \Press} < 0 \]
+
+\textbf{Limit Condition:}
+\[ \lim_{\Press \to \infty} \Phi = 0 \]
+
+\textbf{System Implication:} High-pressure extraction degrades information fidelity.
+Coercion in information exchange introduces noise that destroys replication quality.
+High-fidelity replication requires $\Phi(\Press) \ge F_m$, i.e.\ $\Press \le \sqrt{(1-F_m)/(k F_m)}$.
+(The numerical floor is exact only under the model form $\Phi(\Press) \approx 1/(1+k\,\Press^2)$.)
+% interpretive: choice of fidelity floor F_m (flagged for Node M)
+
+\bigskip
+
+\subsection*{P5: Representative Underdetermination}
+
+\textbf{Axiom:}
+\[ \dim(\Mod) < \dim(\Real) \]
+where $\Mod$ is a representational model and $\Real$ is the system being modelled.
+Mapping $\Real \to \Mod$ is necessarily lossy.
+
+\textbf{Derivation:}
+\[ L \rightarrow 1 \quad \text{as system complexity} \rightarrow \infty \]
+where $L$ is information loss ratio.
+
+\textbf{Limit Condition:} Every summary is a reduction. A model with fewer dimensions than the system it models
+cannot fully encode that system.
+
+\textbf{System Implication:} Representational models cannot substitute for complex
+substrates without compounding loss.
+
+\bigskip
+
+\subsection*{P6: Transformational Error Accumulation}
+
+\textbf{Axiom:} Lossless replication is achievable:
+\[ F_0 = 1 \]
+Transformations introduce non-zero distortion:
+\[ \varepsilon_i > 0 \quad \forall i \]
+
+\textbf{Derivation:} Total cumulative distortion after $n$ transformations ($n$ is the number of transformations in the chain):
+\[ D_n = 1 - \prod_{i=1}^{n}(1 - \varepsilon_i) \]
+Transmission fidelity under repeated transformation:
+\[ F_n = F_0 \cdot \prod_{i=1}^{n}(1 - \varepsilon_i) \]
+
+\textbf{Limit Condition:} If \(0 < \varepsilon_i \le 1\) for all \(i\) and \(\sum_{i=1}^{\infty}\varepsilon_i = \infty\):
+\[ \lim_{n \to \infty} F_n = 0 \]
+
+\textbf{System Implication:} Unchecked transformation chains produce unbounded
+fidelity degradation. Temetic stability requires one or more of the following
+stabilizers:
+\begin{enumerate}
+    \item Verification layers
+    \item Reversible mappings
+    \item Independent substrate verification
+\end{enumerate}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 5: Minimal Decision Procedure}
+
+Given system $X$:
+
+\begin{enumerate}
+    \item Identify structural correspondence to P0--P6.
+    \item Test for violation of axiom or limit condition.
+    \item If violation occurs, classify as systemic collapse condition.
+    \item Label: \textit{Synthetically Probable but Temetically Invalid}.
+\end{enumerate}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{MODULE 6: Termination}
+
+End of Temetic Primer kernel. No additional narrative or interpretive layer required.
+
+\end{document}
