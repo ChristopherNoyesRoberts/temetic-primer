@@ -1,0 +1,1014 @@
+{
+  "$schema": "temetic-kg/v0.4",
+  "model": {
+    "structure": "small_category",
+    "objects": "expressions",
+    "morphisms": "rules",
+    "composition": "rule_chaining",
+    "identity": "P0"
+  },
+  "operator_signatures": {
+    "eq": {
+      "arity": 2,
+      "types": [
+        "any",
+        "any"
+      ]
+    },
+    "neq": {
+      "arity": 2,
+      "types": [
+        "any",
+        "any"
+      ]
+    },
+    "lt": {
+      "arity": 2,
+      "types": [
+        "scalar",
+        "scalar"
+      ]
+    },
+    "gt": {
+      "arity": 2,
+      "types": [
+        "scalar",
+        "scalar"
+      ]
+    },
+    "leq": {
+      "arity": 2,
+      "types": [
+        "scalar",
+        "scalar"
+      ]
+    },
+    "geq": {
+      "arity": 2,
+      "types": [
+        "scalar",
+        "scalar"
+      ]
+    },
+    "add": {
+      "arity": 2,
+      "types": [
+        "scalar",
+        "scalar"
+      ]
+    },
+    "sub": {
+      "arity": 2,
+      "types": [
+        "scalar",
+        "scalar"
+      ]
+    },
+    "mul": {
+      "arity": 2,
+      "types": [
+        "scalar",
+        "scalar"
+      ]
+    },
+    "div": {
+      "arity": 2,
+      "types": [
+        "scalar",
+        "scalar"
+      ]
+    },
+    "pow": {
+      "arity": 2,
+      "types": [
+        "scalar",
+        "scalar"
+      ]
+    },
+    "abs": {
+      "arity": 1,
+      "types": [
+        "scalar"
+      ]
+    },
+    "partial_deriv": {
+      "arity": 2,
+      "types": [
+        "function",
+        "variable"
+      ]
+    },
+    "limit": {
+      "arity": 3,
+      "types": [
+        "expression",
+        "variable",
+        "value"
+      ]
+    },
+    "product": {
+      "arity": 4,
+      "types": [
+        "variable",
+        "scalar",
+        "value",
+        "expression"
+      ]
+    },
+    "sum": {
+      "arity": 4,
+      "types": [
+        "variable",
+        "scalar",
+        "value",
+        "expression"
+      ]
+    },
+    "independence": {
+      "arity": 2,
+      "types": [
+        "expression",
+        "substrate"
+      ]
+    },
+    "surjects": {
+      "arity": 2,
+      "types": [
+        "set",
+        "set"
+      ]
+    },
+    "dim": {
+      "arity": 1,
+      "types": [
+        "any"
+      ]
+    },
+    "apply": {
+      "arity": 2,
+      "types": [
+        "function",
+        "any"
+      ]
+    },
+    "not": {
+      "arity": 1,
+      "types": [
+        "expression"
+      ]
+    },
+    "implies": {
+      "arity": 2,
+      "types": [
+        "expression",
+        "expression"
+      ]
+    },
+    "iff": {
+      "arity": 2,
+      "types": [
+        "expression",
+        "expression"
+      ]
+    },
+    "box": {
+      "arity": 1,
+      "types": [
+        "expression"
+      ]
+    },
+    "forall": {
+      "arity": 2,
+      "types": [
+        "variable",
+        "expression"
+      ]
+    },
+    "exists": {
+      "arity": 2,
+      "types": [
+        "variable",
+        "expression"
+      ]
+    }
+  },
+  "types": [
+    "scalar",
+    "set",
+    "function",
+    "variable",
+    "substrate",
+    "abstract",
+    "replicator",
+    "constraint",
+    "expression",
+    "value",
+    "any"
+  ],
+  "rules": {
+    "P0": {
+      "type": "invariance",
+      "inputs": [
+        "I",
+        "M"
+      ],
+      "outputs": [
+        "constraint"
+      ],
+      "pattern": {
+        "op": "apply",
+        "fn": "V",
+        "arg": "I"
+      },
+      "rewrite": {
+        "op": "independence",
+        "lhs": {
+          "op": "apply",
+          "fn": "V",
+          "arg": "I"
+        },
+        "rhs": "M"
+      },
+      "closure": true,
+      "composable_with": "all",
+      "parent": null,
+      "inherited_by": "all",
+      "definitions": {
+        "T": "V(I)"
+      },
+      "status": "axiom"
+    },
+    "P1": {
+      "type": "decoupling",
+      "inputs": [
+        "T",
+        "Val"
+      ],
+      "outputs": [
+        "constraint"
+      ],
+      "pattern": {
+        "op": "partial_deriv",
+        "num": "T",
+        "den": "Val"
+      },
+      "rewrite": {
+        "op": "eq",
+        "lhs": {
+          "op": "partial_deriv",
+          "num": "T",
+          "den": "Val"
+        },
+        "rhs": 0
+      },
+      "closure": true,
+      "composable_with": [
+        "P0",
+        "P5"
+      ],
+      "parent": "P0",
+      "status": "axiom",
+      "links": [
+        {
+          "to": "P0",
+          "type": "requires_compliance_with"
+        }
+      ],
+      "justification": "Filters Filt(Val) are logically disjoint from T. An evaluator whose verdict depends on valence is not R3-compliant."
+    },
+    "P2": {
+      "type": "surjection",
+      "inputs": [
+        "S",
+        "S_rho",
+        "Ref_rho"
+      ],
+      "outputs": [
+        "constraint"
+      ],
+      "pattern": {
+        "op": "surjects",
+        "from": "S_rho",
+        "to": "Ref_rho"
+      },
+      "rewrite": {
+        "op": "surjects",
+        "from": "S_rho",
+        "to": "Ref_rho",
+        "lossy": true
+      },
+      "closure": true,
+      "composable_with": [
+        "P0",
+        "P5",
+        "P6"
+      ],
+      "parent": "P0",
+      "status": "axiom",
+      "index": "rho",
+      "index_range": "finite resolutions; no claim at the limit (see P5)",
+      "limit_condition": {
+        "text": "At any fixed finite resolution rho, Ref_rho is defined without reference to Inst(S).",
+        "source": "kernel v1.4f, Grok item 3"
+      },
+      "S_rho_definition": "countable set of token types in S that refer to a kind in Ref_rho (no free choice of subset)",
+      "onto_clause": "every kind in Ref_rho is the referent of some token type in S_rho (tokens can always be coined)",
+      "lossy_clause": "some two token types in S_rho share a referent kind"
+    },
+    "P3": {
+      "type": "inversion",
+      "inputs": [
+        "Sig",
+        "C"
+      ],
+      "outputs": [
+        "constraint"
+      ],
+      "pattern": {
+        "op": "gt",
+        "lhs": {
+          "op": "abs",
+          "arg": {
+            "op": "sub",
+            "lhs": "Sig",
+            "rhs": "C"
+          }
+        },
+        "rhs": 0
+      },
+      "rewrite": {
+        "op": "limit",
+        "var": "t",
+        "to": "inf",
+        "result": {
+          "op": "eq",
+          "lhs": "C",
+          "rhs": 0
+        }
+      },
+      "closure": true,
+      "composable_with": [
+        "P0",
+        "P1"
+      ],
+      "parent": "P0",
+      "status": "axiom",
+      "premises": [
+        "selection_filter_Filt"
+      ]
+    },
+    "P4": {
+      "type": "paradox",
+      "inputs": [
+        "Phi",
+        "Press"
+      ],
+      "outputs": [
+        "constraint"
+      ],
+      "pattern": {
+        "op": "apply",
+        "fn": "Phi",
+        "arg": "Press"
+      },
+      "rewrite": {
+        "op": "limit",
+        "var": "Press",
+        "to": "inf",
+        "result": {
+          "op": "eq",
+          "lhs": {
+            "op": "apply",
+            "fn": "Phi",
+            "arg": "Press"
+          },
+          "rhs": 0
+        }
+      },
+      "closure": true,
+      "composable_with": [
+        "P0",
+        "P3"
+      ],
+      "parent": "P0",
+      "status": "axiom",
+      "functional_form": {
+        "op": "eq",
+        "lhs": {
+          "op": "apply",
+          "fn": "Phi",
+          "arg": "Press"
+        },
+        "rhs": {
+          "op": "div",
+          "lhs": 1,
+          "rhs": {
+            "op": "add",
+            "lhs": 1,
+            "rhs": {
+              "op": "mul",
+              "lhs": "k",
+              "rhs": {
+                "op": "pow",
+                "lhs": "Press",
+                "rhs": 2
+              }
+            }
+          }
+        }
+      },
+      "floor_condition": {
+        "op": "leq",
+        "lhs": "Press",
+        "rhs": {
+          "op": "pow",
+          "lhs": {
+            "op": "div",
+            "lhs": {
+              "op": "sub",
+              "lhs": 1,
+              "rhs": "F_m"
+            },
+            "rhs": {
+              "op": "mul",
+              "lhs": "k",
+              "rhs": "F_m"
+            }
+          },
+          "rhs": 0.5
+        }
+      },
+      "floor_exact_only_under_model_form": true
+    },
+    "P5": {
+      "type": "underdetermination",
+      "inputs": [
+        "Mod",
+        "Real"
+      ],
+      "outputs": [
+        "constraint"
+      ],
+      "pattern": {
+        "op": "dim",
+        "arg": "Mod"
+      },
+      "rewrite": {
+        "op": "lt",
+        "lhs": {
+          "op": "dim",
+          "arg": "Mod"
+        },
+        "rhs": {
+          "op": "dim",
+          "arg": "Real"
+        }
+      },
+      "closure": true,
+      "composable_with": [
+        "P0",
+        "P2",
+        "P6"
+      ],
+      "parent": "P0",
+      "status": "axiom"
+    },
+    "P6": {
+      "type": "accumulation",
+      "inputs": [
+        "F_0",
+        "eps_i",
+        "n"
+      ],
+      "outputs": [
+        "F_n",
+        "D_n"
+      ],
+      "pattern": {
+        "op": "product",
+        "index": "i",
+        "from": 1,
+        "to": "n",
+        "term": {
+          "op": "sub",
+          "lhs": 1,
+          "rhs": "eps_i"
+        }
+      },
+      "rewrite": {
+        "op": "eq",
+        "lhs": "F_n",
+        "rhs": {
+          "op": "mul",
+          "lhs": "F_0",
+          "rhs": {
+            "op": "product",
+            "index": "i",
+            "from": 1,
+            "to": "n",
+            "term": {
+              "op": "sub",
+              "lhs": 1,
+              "rhs": "eps_i"
+            }
+          }
+        }
+      },
+      "closure": true,
+      "composable_with": [
+        "P0",
+        "P2",
+        "P5"
+      ],
+      "stabilizers": [
+        "S1_verification",
+        "S2_reversible_on_anchored_coordinates",
+        "S3_independent_substrate"
+      ],
+      "parent": "P0",
+      "status": "axiom",
+      "limit_condition": {
+        "requires": [
+          "0<eps_i<=1",
+          "sum_eps_i_diverges"
+        ],
+        "result": "lim F_n = 0"
+      }
+    }
+  },
+  "entities": {
+    "I": {
+      "type": "abstract",
+      "rule": "P0",
+      "parent": "P0",
+      "gloss": "information"
+    },
+    "M": {
+      "type": "substrate",
+      "rule": "P0",
+      "parent": "P0",
+      "gloss": "medium"
+    },
+    "V": {
+      "type": "function",
+      "rule": "P0",
+      "parent": "P0",
+      "gloss": "truth-valuation function"
+    },
+    "T": {
+      "type": "value",
+      "rule": "P0",
+      "parent": "P0",
+      "gloss": "truth-value T = V(I)"
+    },
+    "Val": {
+      "type": "scalar",
+      "rule": "P1",
+      "parent": "P0",
+      "gloss": "valence scalar (substrate response)"
+    },
+    "Filt": {
+      "type": "function",
+      "rule": "P1",
+      "parent": "P0",
+      "gloss": "filter (in P3: selection filter)"
+    },
+    "S": {
+      "type": "set",
+      "rule": "P2",
+      "parent": "P0",
+      "gloss": "symbolic token types (open-ended)"
+    },
+    "Inst_S": {
+      "type": "set",
+      "rule": "P2",
+      "parent": "P0",
+      "gloss": "currently instantiated tokens"
+    },
+    "rho": {
+      "type": "scalar",
+      "rule": "P2",
+      "parent": "P0",
+      "gloss": "resolution (finite)"
+    },
+    "Ref_rho": {
+      "type": "set",
+      "rule": "P2",
+      "parent": "P0",
+      "gloss": "referent kinds distinguishable at resolution rho"
+    },
+    "Sig": {
+      "type": "scalar",
+      "rule": "P3",
+      "parent": "P0",
+      "gloss": "signal metric"
+    },
+    "C": {
+      "type": "scalar",
+      "rule": "P3",
+      "parent": "P0",
+      "gloss": "functional competence"
+    },
+    "Press": {
+      "type": "scalar",
+      "rule": "P4",
+      "parent": "P0",
+      "gloss": "extraction pressure"
+    },
+    "Phi": {
+      "type": "function",
+      "rule": "P4",
+      "parent": "P0",
+      "gloss": "fidelity as a function of Press"
+    },
+    "k": {
+      "type": "scalar",
+      "rule": "P4",
+      "parent": "P0",
+      "gloss": "scaling constant (k>0) setting the steepness of the fidelity-pressure curve"
+    },
+    "n": {
+      "type": "scalar",
+      "rule": "P6",
+      "parent": "P0",
+      "gloss": "number of transformations in the chain"
+    },
+    "S_rho": {
+      "type": "set",
+      "rule": "P2",
+      "parent": "P0",
+      "gloss": "countable subset of S sufficient to cover Ref_rho"
+    },
+    "F_m": {
+      "type": "scalar",
+      "rule": null,
+      "parent": "P0",
+      "gloss": "meme-level baseline fidelity threshold; fidelity floor (unified, Node M ruling)"
+    },
+    "F_t": {
+      "type": "scalar",
+      "rule": null,
+      "parent": "P0",
+      "gloss": "teme (truth-constrained) fidelity"
+    },
+    "Mod": {
+      "type": "abstract",
+      "rule": "P5",
+      "parent": "P0",
+      "gloss": "representational model"
+    },
+    "Real": {
+      "type": "abstract",
+      "rule": "P5",
+      "parent": "P0",
+      "gloss": "the system being modelled"
+    },
+    "L": {
+      "type": "scalar",
+      "rule": "P5",
+      "parent": "P0",
+      "gloss": "information loss ratio"
+    },
+    "F_0": {
+      "type": "scalar",
+      "rule": "P6",
+      "parent": "P0",
+      "gloss": "fidelity (initial)"
+    },
+    "F_n": {
+      "type": "scalar",
+      "rule": "P6",
+      "parent": "P0",
+      "gloss": "fidelity after n transformations"
+    },
+    "eps_i": {
+      "type": "scalar",
+      "rule": "P6",
+      "parent": "P0",
+      "gloss": "distortion of transformation i"
+    },
+    "D_n": {
+      "type": "scalar",
+      "rule": "P6",
+      "parent": "P0",
+      "gloss": "cumulative distortion"
+    },
+    "F": {
+      "type": "scalar",
+      "rule": null,
+      "parent": "P0",
+      "gloss": "replication fidelity (Module 2)"
+    },
+    "eta": {
+      "type": "scalar",
+      "rule": null,
+      "parent": "P0",
+      "gloss": "substrate noise (Module 2)"
+    },
+    "R1": {
+      "type": "replicator",
+      "rule": "P0",
+      "parent": "P0",
+      "fidelity": "physical",
+      "gloss": "first-class replicator (physical fidelity)",
+      "introduced_in": "module body text (not inside the governing axiom block; tex left unchanged by founder ruling)"
+    },
+    "R2": {
+      "type": "replicator",
+      "rule": "P0",
+      "parent": "P0",
+      "fidelity": "interpretive",
+      "gating": "utility_only",
+      "conditioning": "f_R_proportional_utility",
+      "sterility_condition": false,
+      "gloss": "meme (interpretive fidelity)",
+      "introduced_in": "module body text (not inside the governing axiom block; tex left unchanged by founder ruling)"
+    },
+    "R3": {
+      "type": "replicator",
+      "rule": "P6",
+      "parent": "P0",
+      "fidelity": "logical",
+      "gating": "P6_correspondence",
+      "conditioning": "f_R_proportional_utility_x_P6",
+      "sterility_condition": true,
+      "fidelity_threshold": "F_t_geq_F_m",
+      "velocity_independence": true,
+      "gloss": "teme (logical fidelity, sterile)",
+      "introduced_in": "module body text (not inside the governing axiom block; tex left unchanged by founder ruling)"
+    },
+    "R4": {
+      "type": "replicator",
+      "order": "higher",
+      "rule": null,
+      "parent": "P0",
+      "status": "draft_provisional",
+      "grounding_eligible": false,
+      "gloss": "multi-agent multi-substrate constrained consensus over R3 verified assertions",
+      "requires": [
+        "R3"
+      ],
+      "ruling": "kernel v1.4d Module 1: stratified composite (core/envelope)",
+      "anchoring": {
+        "identical_to_committed_record_under_normal_form": true,
+        "record_external_to_checked_process": true,
+        "verification_gate_precondition": true
+      },
+      "gating": [
+        "P6_correspondence",
+        "S2_reversible_on_anchored_coordinates",
+        "S3_independent_substrate"
+      ]
+    },
+    "R5": {
+      "type": "replicator",
+      "order": "higher",
+      "rule": null,
+      "parent": "P0",
+      "status": "draft_provisional",
+      "grounding_eligible": false,
+      "gloss": "grounded artifact accepted as final for a version by independent-observer check; replicates as identical copies verified by hash/bit-identity",
+      "requires": [
+        "R4"
+      ],
+      "copy_is_P6_transformation": false,
+      "supersedes_v0_3": "v0.3 R5 (thermodynamic governor) is now a capacity constraint on R4 execution, see capacity_constraints"
+    },
+    "delta_S_substrate": {
+      "type": "scalar",
+      "rule": null,
+      "parent": "P0",
+      "grounding_eligible": false,
+      "gloss": "substrate entropy increment"
+    },
+    "delta_max": {
+      "type": "scalar",
+      "rule": null,
+      "parent": "P0",
+      "grounding_eligible": false,
+      "gloss": "maximum permitted increment"
+    }
+  },
+  "temes": {
+    "FMA": {
+      "type": "unit_teme",
+      "normal_form": {
+        "op": "eq",
+        "lhs": "F",
+        "rhs": {
+          "op": "mul",
+          "lhs": "M",
+          "rhs": "A"
+        }
+      },
+      "derivable_from": "P0",
+      "rule": "P0",
+      "parent": "P0",
+      "closure_under": [
+        "P0"
+      ],
+      "collapse_if": "P2_conflation",
+      "local_symbols": {
+        "F": "force",
+        "M": "mass",
+        "A": "acceleration"
+      }
+    }
+  },
+  "proofs": {},
+  "status_note": "Provisional release matching kernel v1.4 (Oct 2026; Grok-compiled, then P5 gloss and \\dim revised by M-approved CL patch). Not yet fully parallaxed; no anchoring hashes committed. Checker v3: zero flags, 22/22 mutation tests.",
+  "link_types": {
+    "derives": "deductive proof from antecedent; requires a verified proof entry",
+    "requires_compliance_with": "axiom that must hold for an evaluator to satisfy the target; no proof required",
+    "motivated_by": "explanatory link only"
+  },
+  "capacity_constraints": {
+    "R4_execution": {
+      "op": "leq",
+      "lhs": "delta_S_substrate",
+      "rhs": "delta_max",
+      "note": "carried from v0.3 R5; extension volume"
+    }
+  },
+  "conditional_arguments": {
+    "arg_P1_motivation": {
+      "path": [
+        "P0",
+        "P1"
+      ],
+      "premises": [
+        "P0",
+        "DEF_R3_compliance_valence_in_evaluator"
+      ],
+      "kind": "conditional",
+      "valid": null,
+      "checked_by": null
+    },
+    "arg_P6_collapse": {
+      "path": [
+        "P0",
+        "P6",
+        "P5"
+      ],
+      "premises": [
+        "F_0=1",
+        "0<eps_i<=1",
+        "sum_eps_i_diverges"
+      ],
+      "kind": "conditional",
+      "valid": null,
+      "checked_by": null,
+      "note": "v0.3 proof_P6_collapse lacked the divergence premise"
+    }
+  },
+  "sheaf_block": {
+    "propositions": [
+      "P0",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6"
+    ],
+    "cells": {
+      "TEX": {
+        "stalk": {
+          "P0": {
+            "symbol": "P0",
+            "gloss": "axiom P0",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P0"
+          },
+          "P1": {
+            "symbol": "P1",
+            "gloss": "axiom P1",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P1"
+          },
+          "P2": {
+            "symbol": "P2",
+            "gloss": "axiom P2",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P2"
+          },
+          "P3": {
+            "symbol": "P3",
+            "gloss": "axiom P3",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P3"
+          },
+          "P4": {
+            "symbol": "P4",
+            "gloss": "axiom P4",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P4"
+          },
+          "P5": {
+            "symbol": "P5",
+            "gloss": "axiom P5",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P5"
+          },
+          "P6": {
+            "symbol": "P6",
+            "gloss": "axiom P6",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P6"
+          }
+        }
+      },
+      "JSON": {
+        "stalk": {
+          "P0": {
+            "symbol": "P0",
+            "gloss": "axiom P0",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P0"
+          },
+          "P1": {
+            "symbol": "P1",
+            "gloss": "axiom P1",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P1"
+          },
+          "P2": {
+            "symbol": "P2",
+            "gloss": "axiom P2",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P2"
+          },
+          "P3": {
+            "symbol": "P3",
+            "gloss": "axiom P3",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P3"
+          },
+          "P4": {
+            "symbol": "P4",
+            "gloss": "axiom P4",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P4"
+          },
+          "P5": {
+            "symbol": "P5",
+            "gloss": "axiom P5",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P5"
+          },
+          "P6": {
+            "symbol": "P6",
+            "gloss": "axiom P6",
+            "level": "L3",
+            "anchored": false,
+            "lineage": "P6"
+          }
+        }
+      }
+    },
+    "edges": [
+      {
+        "a": "TEX",
+        "b": "JSON",
+        "map": "lossless"
+      }
+    ],
+    "constraints": [
+      {
+        "id": "k_axioms",
+        "scope": [
+          "P0",
+          "P1",
+          "P2",
+          "P3",
+          "P4",
+          "P5",
+          "P6"
+        ],
+        "lineage": [
+          "P0",
+          "P1",
+          "P2",
+          "P3",
+          "P4",
+          "P5",
+          "P6"
+        ]
+      }
+    ],
+    "anchoring_status": "pending: hashes committed at promotion of Grok's final kernel"
+  }
+}
